@@ -30,7 +30,7 @@
 #farenheit = temp * (9/5) + 32 
 #print(f"Temperaturen er °{farenheit}.")
 
-#5 Ikke løst
+#5 Ikke løst-------------------------------------------------
 #minutter = int(input("Angi antall minutter: "))
 #konverter = minutter /60 
 #print(f"{konverter} timer og {konverter} minutter. ")
@@ -44,7 +44,7 @@
 #alder = 2023 - bursdag 
 #print(f"Du er {alder} år gammel.")
 
-#8 Kan kutte noe noen desimaler muligens.
+#8
 #pris = int(input("Skriv inn pris på vare: "))
 #total = pris * 1.15 
 #tips = total * 0.15
@@ -56,9 +56,66 @@
 
 #10 uten if?????? 
 #ord = input("Skriv inn et ord: ")
+#reverseord = ord[::-1]
+#if ord == reverseord:
+#    print("Ordet er palindrom!")
+#else:
+#    print("Ordet er ikke palindrom!")
 
 #11
-vekt = int(input("Vekt i Kg: "))
-høyde = float(input("Høyde i M: "))
-bmi = høyde*høyde 
-print(f"Bmi-en din er: {bmi}.")
+#vekt = int(input("Vekt i Kg: "))
+#hoyde = float(input("Høyde i M: "))
+#hoyde2 = hoyde*hoyde
+#bmi = vekt/hoyde2 
+#print(f"Bmi-en din er: {bmi}.")
+
+#12
+#temp = float(input("Skriv inn temperatur i farenheit: "))
+#celsius = (temp - 32)*5/9
+#print(f"Temperaturen i celsius er °{celsius}")
+
+#14
+#i = 3.14
+#adius = float(input("Radius på sirkel: "))
+#mkrets = (pi*2)*radius
+#rint(f"Omkretsen er {omkrets} cm.")
+#
+#15 
+#i = 3.14
+#adius = float(input("Hva er radiusen på sirkelen?: "))
+#real = pi*radius**2
+#rint(f"Arealet på sirkelen er {areal}.")
+
+#21 ?????------------------------------------
+#svar = int(input("Skriv inn tall: "))
+
+#22 chatgpt hjalp litt. 
+#svar = input("Skriv inn et ord: ")
+#vliste = "aeiouæøåAEIOUÆØÅ"
+#teller = 0 
+#for vokal in svar:
+#    if vokal in vliste:
+#        teller += 1 
+#print(f"Det er {teller} vokaler i ordet ditt.")
+
+#25 Be brukeren om to ord og sjekk om de er anagrammer av hverandre. 
+
+#29 Spør brukeren om et ord og skriv ut det tredje og det nest siste tegnet i ordet. 
+ord = (input("Skriv inn et ord. "))
+print(ord[len(ord)-2]) 
+#30
+
+#31 
+
+#32
+
+#33
+
+#34
+
+#35
+#36
+#37
+#38
+#39
+#40
