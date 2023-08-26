@@ -102,7 +102,7 @@
 
 #29 Spør brukeren om et ord og skriv ut det tredje og det nest siste tegnet i ordet. 
 ord = (input("Skriv inn et ord. "))
-print(ord[len(ord)-2]) 
+print(ord[len(ord)-2])
 #30
 
 #31 
