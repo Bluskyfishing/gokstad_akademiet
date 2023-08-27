@@ -84,10 +84,14 @@
 #real = pi*radius**2
 #rint(f"Arealet på sirkelen er {areal}.")
 
-#21 Spør brukeren om et heltall og skriv ut om tallet er oddetall eller partall.  ----------------------
-#svar = int(input("Skriv inn tall: ")) inrange?
+#21 Spør brukeren om et heltall og skriv ut om tallet er oddetall eller partall.
+#svar = int(input("Skriv inn tall: ")) 
+#if svar % 2 == 0:
+#    print("Svaret er et partall!")
+#else:
+#    print("Svaret er et oddetall!")
 
-#22 chatgpt hjalp litt. 
+#22 Be brukeren om et ord og skriv ut antall vokaler i ordet. 
 #svar = input("Skriv inn et ord: ")
 #vokalliste = "aeiouæøåAEIOUÆØÅ"
 #teller = 0 
@@ -136,7 +140,17 @@
 #else:
 #    print("Teksten inneholder ikke A!")
 
-#32 Be brukeren om et tall og skriv ut tallets faktorielle. -----------------
+#32 Be brukeren om et tall og skriv ut tallets faktorielle.
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+    
+tall = int(input("Skriv inn et tall: "))
+
+resultat = factorial(tall)
+print(f"{tall}! = {resultat}")
 
 #33 Spør brukeren om en setning og skriv ut antall ord i setningen.
 #setning = input("Skriv en setning: ")
@@ -147,7 +161,15 @@
 #ord = input("Skriv ett ord: ")
 #print(ord.upper())
 
-#35 La brukeren gi inn et tall og avgjøre om tallet er positivt, negativt, eller null. -----------
+#35 La brukeren gi inn et tall og avgjøre om tallet er positivt, negativt, eller null.
+#tall = int(input("Skriv et tall: "))
+#
+#if tall < 0:
+#    print("Tallet er negativt!")
+#elif tall > 0: 
+#    print("Tallet er positivt!") 
+#elif tall == 0:
+#    print("Tallet er 0!")
 
 #36 Spør brukeren om tre tall og skriv ut det største tallet.
 #tall1 = int(input("Skriv inn første tall: "))
@@ -165,12 +187,31 @@
 
 #37 Be brukeren om en tekst og skriv ut antall mellomrom i teksten.
 #tekst = input("Skriv en tekst: ")
-#mellomrom = tekst.count(" ")
+#mellomrom = tekst.count(" ")vokalliste = "aeiouæøåAEIOUÆØÅ"
 #print(f"Det er {mellomrom} mellomrom i denne teksten.")
 
-#38 Be brukeren om et ord, bytt ut alle vokalene med bokstaven 'x', og skriv ut det nye ordet. -----------------
+#38 Be brukeren om et ord, bytt ut alle vokalene med bokstaven 'x', og skriv ut det nye ordet.
+#ord = input("Skriv inn et ord: ")
+#vokalliste = "aeiouæøåAEIOUÆØÅ"
+#nytt_ord = []
+#ikkemellomrom = ""
+#for bokstav in ord: 
+#    if bokstav in vokalliste:
+#        utbytte = bokstav.replace(bokstav,"x")
+#        nytt_ord.append(utbytte)
+#    elif bokstav not in vokalliste:
+#        nytt_ord.append(bokstav)
+#
+#final_ord = ikkemellomrom.join(map(str,nytt_ord))
+#print(final_ord)
 
-#39 Spør brukeren om et tall og skriv ut alle heltall opp til det tallet. -----------------------
+#39 Spør brukeren om et tall og skriv ut alle heltall opp til det tallet. 
+#svar = int(input("Skriv inn et tall: "))
+#tellefix = svar + 1 
+#teller = range(tellefix)
+#
+#for tall in teller:
+#    print(tall)
 
 #40 La brukeren gi inn en setning og skriv ut setningen i omvendt rekkefølge. ---------------------------
 #setning = input("Skriv setning: ")
