@@ -5,7 +5,7 @@ tall = random.randint(1, 100)
 teller = 0
 svar = None
 
-#print(tall)
+print(tall)
 
 while svar != tall: 
     svar = int(input(f"Gjett tallet! (1 - 100):\n"))
