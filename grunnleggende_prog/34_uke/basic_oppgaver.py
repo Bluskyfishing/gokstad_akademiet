@@ -141,16 +141,16 @@
 #    print("Teksten inneholder ikke A!")
 
 #32 Be brukeren om et tall og skriv ut tallets faktorielle.
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
-    
-tall = int(input("Skriv inn et tall: "))
-
-resultat = factorial(tall)
-print(f"{tall}! = {resultat}")
+#def factorial(n):
+#    if n == 0:
+#        return 1
+#    else:
+#        return n * factorial(n - 1)
+#    
+#tall = int(input("Skriv inn et tall: "))
+#
+#resultat = factorial(tall)
+#print(f"{tall}! = {resultat}")
 
 #33 Spør brukeren om en setning og skriv ut antall ord i setningen.
 #setning = input("Skriv en setning: ")
@@ -214,11 +214,11 @@ print(f"{tall}! = {resultat}")
 #    print(tall)
 
 #40 La brukeren gi inn en setning og skriv ut setningen i omvendt rekkefølge. ---------------------------
-#setning = input("Skriv setning: ")
-#
-#deltopp = setning.split()
-#reverse_setning = []
-#for x in deltopp:
-#    reverse_setning.append(x)
-#    reverse_setning.append(" ")
-#print(reverse_setning)
+setning = input("Skriv setning: ")
+
+deltopp = setning.split()
+reverse_setning = []
+for x in deltopp:
+    reverse_setning.append(x)
+    reverse_setning.append(" ")
+print(reverse_setning)
