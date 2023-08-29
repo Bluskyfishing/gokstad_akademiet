@@ -90,50 +90,38 @@ import random
 spiller_score = 0 
 pc_score = 0 
 runder = 0
+valg_navn = ["stein", "saks", "papir"]
 
-pc_valg = random.randint(0,2)
 
-spiller_valg = int(input(f"Skriv inn et tall (0-2)\n0 = Stein\n1 = Saks\n2 = Papir\nSkriv her: "))
+def gamemaster(spiller_score, pc_score, runder):
+    while runder < 2:
+        pc_valg = random.randint(0,2)
+        spiller_valg = int(input(f"Skriv inn et tall (0-2)\n0 = Stein\n1 = Saks\n2 = Papir\nSkriv her: "))
 
-if pc_valg == 2:
-    pc_valg = "papir"
-elif pc_valg == 1:
-    pc_valg = "saks"
-else:
-    pc_valg = "stein"
+        print(f"Spiller valgte: {valg_navn[spiller_valg]}")
+        print(f"PC valgte: {valg_navn[pc_valg]}")
 
-if spiller_valg == 2:
-    spiller_valg = "papir"
-elif spiller_valg == 1:
-    spiller_valg = "saks"
-else:
-    spiller_valg = "stein"
+        if spiller_valg == pc_valg:
+            print(f"Uavgjort!\nScore: Spiller:{spiller_score} PC:{pc_score} ")
+        elif (spiller_valg == 0 and pc_valg == 1) or (spiller_valg == 1 and pc_valg == 2) or (spiller_valg == 2 and pc_valg == 0):
+            spiller_score += 1
+            print(f"Spiller vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
+        else:
+            pc_score += 1
+            print(f"PC vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
 
-while runder < 10:
-    if pc_valg == "papir" and spiller_valg == "stein":
-        pc_score += 1 
         runder += 1
-        print(f"PC vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
-    if pc_valg == "stein" and spiller_valg == "saks":
-        pc_score += 1 
-        runder += 1
-        print(f"PC vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
-    if pc_valg == "saks" and spiller_valg == "papir":
-      pc_score += 1 
-      runder += 1
-      print(f"PC vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
-    if spiller_valg == "papir" and pc_valg == "stein":
-      spiller_score += 1 
-      runder += 1
-      print(f"Spiller vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
-    if spiller_valg == "stein" and pc_valg == "saks":
-      spiller_score += 1 
-      runder += 1
-      print(f"Spiller vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
-    if spiller_valg == "saks" and pc_valg == "papir":
-      spiller_score += 1 
-      runder += 1
-      print(f"Spiller vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
-    if spiller_valg == pc_valg:
-        runder += 1
-        print(f"Uavgjort!\nScore: Spiller:{spiller_score} PC:{pc_score} ")
+
+        if runder == 2:
+            if spiller_score > pc_score:
+                print("Spiller vinner vant med:",spiller_score,"poeng!")
+            elif pc_score > spiller_score:
+                print("PC vinner vant med:",pc_score,"poeng!")
+            else:
+                print("SUDDEN DEATH!!!")
+                runder -= 1
+                gamemaster(spiller_score, pc_score, runder) 
+        
+gamemaster(spiller_score, pc_score, runder) 
+
+print(f"Spillet er ferdig!")
