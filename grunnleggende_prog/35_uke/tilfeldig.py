@@ -119,7 +119,7 @@ def gamemaster(spiller_score, pc_score, runder):
                 print("PC vinner vant med:",pc_score,"poeng!")
             else:
                 print("SUDDEN DEATH!!!")
-                runder -= 1
+                runder == 1
                 gamemaster(spiller_score, pc_score, runder) 
         
 gamemaster(spiller_score, pc_score, runder) 
