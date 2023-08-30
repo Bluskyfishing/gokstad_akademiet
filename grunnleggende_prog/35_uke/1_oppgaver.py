@@ -130,4 +130,4 @@ for fib in fib_sequence:
 #    tall *= 2
 #    print(tall)
 
-#20
+#20 Lag et program som skriver ut gangetabellen slik som du ser under.

@@ -94,7 +94,7 @@ valg_navn = ["stein", "saks", "papir"]
 
 
 def gamemaster(spiller_score, pc_score, runder):
-    while runder < 2:
+    while runder < 10:
         pc_valg = random.randint(0,2)
         spiller_valg = int(input(f"Skriv inn et tall (0-2)\n0 = Stein\n1 = Saks\n2 = Papir\nSkriv her: "))
 
@@ -112,15 +112,26 @@ def gamemaster(spiller_score, pc_score, runder):
 
         runder += 1
 
-        if runder == 2:
+        if runder == 10:
             if spiller_score > pc_score:
                 print("Spiller vinner vant med:",spiller_score,"poeng!")
             elif pc_score > spiller_score:
                 print("PC vinner vant med:",pc_score,"poeng!")
             else:
                 print("SUDDEN DEATH!!!")
-                runder == 1
-                gamemaster(spiller_score, pc_score, runder) 
+                while spiller_score == pc_score:
+                    pc_valg = 1 #random.randint(0,2)
+                    spiller_valg = int(input(f"Skriv inn et tall (0-2)\n0 = Stein\n1 = Saks\n2 = Papir\nSkriv her: "))
+
+                    if spiller_valg == pc_valg:
+                        print(f"Uavgjort!\nScore: Spiller:{spiller_score} PC:{pc_score} ")
+                        print("SUDDEN DEATH!!!")
+                    elif (spiller_valg == 0 and pc_valg == 1) or (spiller_valg == 1 and pc_valg == 2) or (spiller_valg == 2 and pc_valg == 0):
+                        spiller_score += 1
+                        print(f"Spiller vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
+                    else:
+                        pc_score += 1
+                        print(f"PC vinner!\nScore: Spiller:{spiller_score} PC:{pc_score}")
         
 gamemaster(spiller_score, pc_score, runder) 
 
