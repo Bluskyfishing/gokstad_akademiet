@@ -120,7 +120,7 @@ def gamemaster(spiller_score, pc_score, runder):
             else:
                 print("SUDDEN DEATH!!!")
                 while spiller_score == pc_score:
-                    pc_valg = 1 #random.randint(0,2)
+                    pc_valg = random.randint(0,2)
                     spiller_valg = int(input(f"Skriv inn et tall (0-2)\n0 = Stein\n1 = Saks\n2 = Papir\nSkriv her: "))
 
                     if spiller_valg == pc_valg:
