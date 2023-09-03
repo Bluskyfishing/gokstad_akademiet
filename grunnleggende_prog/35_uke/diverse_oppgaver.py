@@ -29,7 +29,7 @@ karakterer = None
 while karakterer != "stop":
     karakterer = str(input(f"Skriv 'stop' når alle karaterene er lagt inn. \nSkriv inn karakter: "))
     if karakterer == "stop":
-        int_liste = list(map(int,karakter_liste)) #????
+        int_liste = list(map(int,karakter_liste))
         int_liste.sort() 
 
         gjennomsnitt = sum(int_liste) / len(int_liste)
