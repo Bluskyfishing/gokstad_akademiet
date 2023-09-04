@@ -15,9 +15,9 @@
 #pyplot.ylabel("Antall")
 #pyplot.show()
 
-#c)
+#c) finne på en tabell av karakterer og anntall 
 
-#Oppgave 2
+#Oppgave 2 vneter på publisering av oppgave i teskst.
 
 
 #Oppgave 3 
