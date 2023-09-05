@@ -15,9 +15,9 @@ def rektangel():
 
     for side in range(0,2):
         t.left(90)
-        t.forward(300)
+        t.forward(301)
         t.left(90)
-        t.forward(500)
+        t.forward(501)
     t.right(180)
     t.end_fill()
 
@@ -69,8 +69,7 @@ t.right(90)
 t.forward(40)
 t.end_fill()
 
-#Sirkel blå halvdel
-t.width(15)
+#Justering av posisjon
 t.left(180)
 t.forward(50)
 t.left(90)
@@ -78,12 +77,13 @@ t.forward(50)
 t.right(90)
 t.forward(25)
 
+#Sirkel blå/rød halvdel
+t.width(15)
 t.pendown()
 t.pencolor("red")
 t.circle(100,180)
 t.pencolor("blue")
 t.circle(100,180)
-
 
 #Gjemme peker
 t.penup()
