@@ -1,29 +1,25 @@
-#Skriv et program som leser inn et navn og skriver ut en hilsen til brukeren.Eks «Hei, Ola»  
 navn = input("Skriv navnet ditt: ")
 
-print("Hei", navn)
+print(f"Hei {navn}\n")
 
-#Skriv et program som leser inn et tall og skriver ut om tallet er positivt, negativt eller null  
-tall = int(input("Skriv et tall: "))
+tall = int(input(f"Skriv et tall: \n"))
 
 if tall < 0:
-    print("Tallet er negativt!")
+    print(f"Tallet er negativt!\n")
 elif tall > 0: 
-    print("Tallet er positivt!") 
+    print(f"Tallet er positivt!\n") 
 elif tall == 0:
-    print("Tallet er 0!")
+    print(f"Tallet er 0!\n")
 
-#Skriv et program som leser inn et tall og skriver ut det dobbelte.
-tall = int(input("Skriv inn et tall: "))
+tall = int(input(f"Skriv inn et tall: \n"))
 
-print(f"Det dobbelte av {tall} er {tall * 2}.")
+print(f"Det dobbelte av {tall} er {tall * 2}.\n")
 
-#Skriv et program som leser inn en tekst og skriver ut teksten baklengs. 
-tekst = input("Skriv inn et ord: ")
+tekst = input(f"Skriv inn et ord: \n")
 
 baklengs = tekst[::-1]
 
-print(f"{tekst} baklengs er {baklengs}.")
+print(f"\n{tekst} baklengs er {baklengs}.\n")
 
 
 input()
