@@ -20,7 +20,7 @@ print("")
 
 index_teller = 0
 
-while index_teller < 5:
+while index_teller < len(liste):
     print(f"Index:{index_teller} Verdi:{liste[index_teller]}")
     index_teller += 1
 print("")
@@ -30,7 +30,7 @@ total = 0
 
 for tall in liste:
     total += tall
-print(total)
+print(f"Total er alle elementene i listen: {total}")
 
 #print(sum(liste))
 
