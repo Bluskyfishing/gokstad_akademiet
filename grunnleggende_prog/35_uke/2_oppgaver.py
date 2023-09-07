@@ -48,18 +48,32 @@
 
 import random
 
+svar = 1 
+
+#while svar != "avslutt":
 tall1 = random.randint(1,10)
 tall2 = random.randint(1,10)
-resultat = tall1 * tall2
+regneoperator = random.randint(0,3)
+valg_regneopetraor = ["addisjon","subtraksjon","divisjon","multiplikasjon"]
+final_valg = valg_regneopetraor[regneoperator]
 
-svar = int(input(f"Hva er produktet mellom {tall1} og {tall2}\nSkriv her: "))
+print(final_valg)
 
-if svar == resultat:
-    print("Riktig! Neste spørsmål!")
-    tall1 = random.randint(1,10)
-    tall2 = random.randint(1,10)
-    resultat = tall1 * tall2
-    while svar != resultat:
-        svar = int(input(f"Hva er produktet mellom {tall1} og {tall2}\nSkriv her: "))
-elif svar == 0:
-    pass
+if final_valg == "addisjon":
+    svar = int(input(f"Hva er {tall1} + {tall2}\nSkriv her: "))
+elif final_valg == "subtraksjon":
+    svar = int(input(f"Hva er {tall1} - {tall2}\nSkriv her: "))
+elif final_valg == "divisjon":
+    svar = int(input(f"Hva er {tall1} / {tall2}\nSkriv her: "))
+elif final_valg == "multiplikasjon":
+    svar = int(input(f"Hva er {tall1} * {tall2}\nSkriv her: "))
+
+ if svar == resultat:
+     tall1 = random.randint(1,10)
+     tall2 = random.randint(1,10)
+     resultat = tall1 * tall2
+ 
+   # if svar == "avslutt":
+   #     print("Programmet avsluttes!")
+   #     break
+    

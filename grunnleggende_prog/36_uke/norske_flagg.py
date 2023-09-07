@@ -6,7 +6,7 @@ t = turtle.Turtle()
 
 def rektangel():
     turtle.Screen().bgcolor("black")
-    t.speed(20)
+    t.speed(5)
     t.fillcolor("red")
     t.begin_fill()
     t.up()
