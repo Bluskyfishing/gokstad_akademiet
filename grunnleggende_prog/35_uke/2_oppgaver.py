@@ -48,32 +48,33 @@
 
 import random
 
-svar = 1 
+while True:
+    tall1 = random.randint(1,10) #Random tall
+    tall2 = random.randint(1,10)
+    regneoperator = random.randint(0,3) 
+    valg_regneopetraor = ["addisjon","subtraksjon","divisjon","multiplikasjon"] #Liste med regneoperatorer
+    final_valg = valg_regneopetraor[regneoperator] #Velger hvilken operator string 
 
-#while svar != "avslutt":
-tall1 = random.randint(1,10)
-tall2 = random.randint(1,10)
-regneoperator = random.randint(0,3)
-valg_regneopetraor = ["addisjon","subtraksjon","divisjon","multiplikasjon"]
-final_valg = valg_regneopetraor[regneoperator]
+    print(final_valg)
 
-print(final_valg)
+    if final_valg == "addisjon":
+        resultat = tall1 + tall2
+        svar = int(input(f"Hva er {tall1} + {tall2}\nSkriv her: "))
+    elif final_valg == "subtraksjon":
+        resultat = tall1 - tall2
+        svar = int(input(f"Hva er {tall1} - {tall2}\nSkriv her: "))
+    elif final_valg == "divisjon":
+        resultat = tall1 / tall2
+        svar = int(input(f"Hva er {tall1} / {tall2}\nSkriv her: "))
+    elif final_valg == "multiplikasjon":
+        resultat = tall1 * tall2
+        svar = int(input(f"Hva er {tall1} * {tall2}\nSkriv her: "))
 
-if final_valg == "addisjon":
-    svar = int(input(f"Hva er {tall1} + {tall2}\nSkriv her: "))
-elif final_valg == "subtraksjon":
-    svar = int(input(f"Hva er {tall1} - {tall2}\nSkriv her: "))
-elif final_valg == "divisjon":
-    svar = int(input(f"Hva er {tall1} / {tall2}\nSkriv her: "))
-elif final_valg == "multiplikasjon":
-    svar = int(input(f"Hva er {tall1} * {tall2}\nSkriv her: "))
-
- if svar == resultat:
-     tall1 = random.randint(1,10)
-     tall2 = random.randint(1,10)
-     resultat = tall1 * tall2
- 
-   # if svar == "avslutt":
-   #     print("Programmet avsluttes!")
-   #     break
-    
+    if svar == resultat: #Hvis riktig svar skipper iterasjon.
+        continue
+    elif svar == "avslutt":
+        print("Programmet avsluttes!")
+        break
+    else: 
+        while svar != resultat: #Hvis svar ikke er resultatet, går i loop.
+            svar = int(input("Try again!: "))
