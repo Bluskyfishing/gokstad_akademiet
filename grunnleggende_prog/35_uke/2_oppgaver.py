@@ -46,8 +46,6 @@
 #else:
 #    pass
 
-#Gangetabell spillet Utvidelse ikke gjort.
-
 import random
 
 tall1 = random.randint(1,10)

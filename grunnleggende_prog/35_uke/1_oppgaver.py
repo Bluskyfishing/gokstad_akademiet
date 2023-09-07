@@ -107,19 +107,19 @@
 #    print("Tallene er like.")
 
 #18 Lag et program som skriver ut denne tallfølgen på skjermen (Fibonaccitall).
-n = int(input("Hvor mange Fibonacci-tall vil du generere? "))
-
-fib_sequence = [0, 1]
-for _ in range(2, n):
-    next_fib = fib_sequence[-1] + fib_sequence[-2]
-    fib_sequence.append(next_fib)
-
-print("Fibonacci-tallene:")
-for fib in fib_sequence:
-    if fib == 0:
-        pass
-    else:
-        print(fib)
+#n = int(input("Hvor mange Fibonacci-tall vil du generere? "))
+#
+#fib_sequence = [0, 1]
+#for _ in range(2, n):
+#    next_fib = fib_sequence[-1] + fib_sequence[-2]
+#    fib_sequence.append(next_fib)
+#
+#print("Fibonacci-tallene:")
+#for fib in fib_sequence:
+#    if fib == 0:
+#        pass
+#    else:
+#        print(fib)
 
 #19 Lag et program som for hver iterasjon dobler tallet som skrives ut på skjerm. Start med tallet 1 og gjør dette for de 10 første tallene. 
 #tall = int(input("Skriv inn et tall: "))
@@ -131,3 +131,8 @@ for fib in fib_sequence:
 #    print(tall)
 
 #20 Lag et program som skriver ut gangetabellen slik som du ser under.
+
+
+for x in range(1,11):
+    print(f"1*{x}={1 * x} 2*{x}={2 * x} 3*{x}={3 * x} 4*{x}={4 * x} 5*{x}={5 * x} 6*{x}={6 * x} 7*{x}={7 * x} 8*{x}={8 * x} 9*{x}={9 * x} 10*{x}={10 * x}")
+
