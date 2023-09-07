@@ -40,8 +40,8 @@ t.forward(200)
 t.left(90)
 t.end_fill()
 
-#Grønn stripe
-t.fillcolor("green")
+#Gul stripe
+t.fillcolor("yellow")
 t.begin_fill()
 t.up()
 t.forward(300)
@@ -56,8 +56,8 @@ t.forward(80)
 t.left(90)
 t.end_fill()
 
-#Gul stripe
-t.fillcolor("yellow")
+#Grønn stripe
+t.fillcolor("green")
 t.begin_fill()
 t.up()
 t.forward(300)
