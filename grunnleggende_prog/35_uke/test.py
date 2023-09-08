@@ -51,14 +51,41 @@
 #print("Spillet er ferdig!")
 #
 
-import random
+#import random
+#
+#liste = []
+#
+#
+#
+#for i in range(0,5):
+#    randomtall = random.randint(0,100)
+#    liste.append(randomtall)
+#
+#print(liste)
 
-liste = []
+from tkinter import *
+def valg_stein():
+    spiller_valg = 0 
+
+root = Tk()
+root.title("Stein, saks, papir spill")
+root.geometry("500x500")
+
+stein_btn = PhotoImage(file="stein.png")
+scaled_image = stein_btn.subsample(2, 2)
+
+my_button = Button(root, image=stein_btn, command=valg_stein)
+my_button.pack(pady=20)
+
+saks_btn = PhotoImage(file="saks.png")
+scaled_image = saks_btn.subsample(2, 2)
+
+my_button2 = Button(root, image=saks_btn, command=valg_stein)
+my_button2.pack(pady=20)
 
 
 
-for i in range(0,5):
-    randomtall = random.randint(0,100)
-    liste.append(randomtall)
 
-print(liste)
+
+
+root.mainloop()
