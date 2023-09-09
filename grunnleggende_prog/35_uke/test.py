@@ -64,26 +64,61 @@
 #print(liste)
 
 from tkinter import *
+
 def valg_stein():
     spiller_valg = 0 
+def valg_saks():
+    spiller_valg = 1 
+def valg_papir():
+    spiller_valg = 2
+
+runder = 0
+spiller_score = 1
+pc_score = 2 
+
 
 root = Tk()
 root.title("Stein, saks, papir spill")
-root.geometry("500x500")
+root.geometry("1000x1000")
+
+
+var = StringVar()
+var.set("Runde:")
+label = Label(root, textvariable=var)
+label.pack()
+ny_runde = "Runde:",runder
+var.set(ny_runde)
+
+
+#var = StringVar()
+#var.set("Spiller Score:")
+#label2 = Label(root, textvariable=var)
+#label2.pack()
+#spiller_score_update = "Spiller_score:",spiller_score
+#var.set(spiller_score_update)
+#
+#var = StringVar()
+#var.set("PC Score:")
+#label3 = Label(root, textvariable=var)
+#label3.pack()
+#pc_score_update = "PC_score:",pc_score
+#var.set(pc_score_update)
+
 
 stein_btn = PhotoImage(file="stein.png")
-scaled_image = stein_btn.subsample(2, 2)
-
-my_button = Button(root, image=stein_btn, command=valg_stein)
-my_button.pack(pady=20)
+scaled_stein_image = stein_btn.subsample(2, 2)
+my_button = Button(root, image=scaled_stein_image, command=valg_stein)
+my_button.pack(pady=10)
 
 saks_btn = PhotoImage(file="saks.png")
-scaled_image = saks_btn.subsample(2, 2)
+scaled_saks_image = saks_btn.subsample(3, 3)
+my_button2 = Button(root, image=scaled_saks_image, command=valg_saks)
+my_button2.pack(pady=10)
 
-my_button2 = Button(root, image=saks_btn, command=valg_stein)
-my_button2.pack(pady=20)
-
-
+papir_btn = PhotoImage(file="papir.png")
+scaled_papir_image = papir_btn.subsample(2, 2)
+my_button3 = Button(root, image=scaled_papir_image, command=valg_papir)
+my_button3.pack(pady=10)
 
 
 
