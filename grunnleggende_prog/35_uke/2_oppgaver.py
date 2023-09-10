@@ -170,3 +170,15 @@
 #        break
 
 # 8. Lag et program som løser pytagoras 
+import math
+
+
+def pytagoras():
+    vinkel1 = int(input("Skriv in vinkel A: "))
+    vinkel2 = int(input("Skriv in vinkel B: "))
+    vinkel_ekpo = pow(vinkel1,2) + pow(vinkel2,2)
+    vinkel3 = math.sqrt(vinkel_ekpo)
+    print(f"A:{vinkel1} B:{vinkel2} = C: {vinkel3}")
+
+
+pytagoras()
