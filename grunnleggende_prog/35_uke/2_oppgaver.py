@@ -182,3 +182,5 @@ def pytagoras():
 
 
 pytagoras()
+
+# 9. Lage eget matematisk bibliotek ( egen .py fil som kan brukes fra andre program, interaktivt shell) 
