@@ -104,4 +104,126 @@
 #print(ingendup)
 
 # 5. Listeomvendt:
+def omvendt_liste():
+    liste = []
 
+    while True:
+        tekst = input("Skriv tekst inn her: ")
+        if tekst == "stop":
+            break
+        liste.append(tekst)
+    liste.reverse()
+    print(liste)
+
+# 6. Liste av partall
+
+def partall_liste():
+    liste = []
+
+    while True:
+        tall = input("Skriv tall inn her: ")
+
+        if tall == "stop":
+            break
+        tall_int = int(tall)
+        if tall_int%2 == 0:
+            liste.append(tall_int)
+
+    
+    print(liste)
+
+# 7. Slett elementer
+
+def sletting_liste():
+    liste = []
+
+    while True:
+        tekst = input("Skriv tall inn her: ")
+
+        if tekst == "0":
+            break
+        liste.append(tekst)
+
+    print(liste)
+    
+    for element in liste:
+        if len(element) > 5:
+            liste.pop()
+    
+    print(liste)
+
+# 8. Tallrekkefølge 
+
+def tallrekkefolge():
+    liste = []
+    stigende = 0
+
+
+    while True:
+        tall = input("Skriv tall inn her: ")
+
+        if tall == "stop":
+            break
+        tall_int = int(tall)
+
+        liste.append(tall_int) 
+
+    for i in range(1,len(liste)):
+        if liste[i - 1 ] < liste[i]:
+            stigende = True
+        else:
+            stigende = False
+        
+    if stigende == True:
+        print("Listen er i stigende rekkefølge!")
+    else: 
+        print("Listen er ikke i stigende rekkeføgle!")
+
+# 9. Finn felles elementer
+
+def felles_elementer():
+    liste = []
+    liste2 = []
+    felles = []
+
+    while True:
+        tall = input("Skriv tall for liste1: ")
+        tall2 = input("Skriv tall for liste2: ") 
+        if tall == "stop" or tall2 == "stop":
+            break
+        tall_int = int(tall)
+        tall2_int = int(tall2)
+
+        liste.append(tall_int) 
+        liste2.append(tall2_int)
+        liste.sort()
+        liste2.sort()
+
+    for i in range(len(liste)):
+        if liste[i] == liste2[i]:
+            felles.append(liste[i])
+
+
+        
+    print(liste,liste2,felles)
+
+# 10. Palindrom-identifikasjon
+
+def palindrom():
+    liste = []
+    palindrom_ord = []
+
+    while True:
+        tekst = input("Skriv tall inn her: ")
+
+        if tekst == "stop":
+            break
+        liste.append(tekst)
+
+    for i in liste:
+        if i == i[::-1]:
+            palindrom_ord.append(i)
+    
+    print(liste,palindrom_ord)
+
+palindrom()
