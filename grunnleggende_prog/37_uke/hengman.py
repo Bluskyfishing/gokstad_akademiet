@@ -14,7 +14,6 @@ while True:
     svar = input("Gjett en bokstav!: ")
     if svar in husket_ord:
         for i in range(len(husket_ord))
-        
             
 
     print(hemmlig_ord)
