@@ -14,9 +14,9 @@ def hengman(ord,liv):
         svar = input("Gjett en bokstav!: ")
 
         if svar in husket_ord:
-            for i in range(len(husket_ord)):
-                if svar == husket_ord[i]:
-                    hemmlig_ord[i] = svar
+            for index in range(len(husket_ord)):
+                if svar == husket_ord[index]:
+                    hemmlig_ord[index] = svar
                     continue
         if svar not in husket_ord:
             liv -= 1
