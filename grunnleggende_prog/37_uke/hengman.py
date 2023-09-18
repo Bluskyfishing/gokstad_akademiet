@@ -28,7 +28,6 @@ def hengman(ord,liv):
             print("Du vinner! Svaret var:","".join(husket_ord))
             break
 
-
 ord = input("Skriv inn ordet som skal gjettes: ")
 liv = int(input("Antall liv: "))
 

@@ -31,7 +31,7 @@ while valg != "stop":
         resultat = tall1 / tall2
         print(f"{tall1} / {tall2} = {resultat}\n")
 
-    elif valg == "avslutt":
+    elif valg == "0" or valg == "avslutt":
         print("Programmet avsluttes!")
         break
     
