@@ -17,5 +17,4 @@ def quiz():
             print(f"The quiz is over! You got {points} correct out of {rounds}.")
             break
 
-
 quiz()
