@@ -3,10 +3,11 @@ countries = {"Japan":"Tokyo","Norway":"Oslo","England":"London"}
 def quiz():
     rounds = 0
     points = 0
-
+    alternatives = [x for x in countries.values()]
     while True:
         for i in countries.keys():
-            answer = input(f"Whats the capital in {i}?\n")
+            print(alternatives)
+            answer = input(f"Whats the capital in {i}?\nSkriv her: ")
             rounds += 1
             if answer == countries[i]:
                 print("Correct! Next question!\n")   
