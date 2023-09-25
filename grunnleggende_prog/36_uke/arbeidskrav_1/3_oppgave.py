@@ -18,6 +18,19 @@ print(dyr)
 
 print(" ")
 
+dyr = ["hund", "katt", "fisk", "ape", "fugl"]
+navn_dyr =["Kåre","Karl","Bob","Per","Espen"]
+
+
+my_dict = dict(zip(dyr,navn_dyr))
+print(my_dict)
+
+my_dict2 = {}
+for i in range(0,len(dyr)):
+    my_dict2[dyr[i]] = navn_dyr[i]
+print(my_dict2)
+
+
 dyr_dict = {"hund": "Kåre",
             "katt": "Karl",
             "fisk": "Bob",
