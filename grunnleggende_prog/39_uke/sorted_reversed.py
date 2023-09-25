@@ -27,9 +27,6 @@ def len_sort():
     print(fruit_list)
 
 
-
-
-
 #Reversed
 
 def reversed_list():
@@ -47,16 +44,22 @@ def reversed_tuple():
     mytuple = (1, 2, 3, 4, 5)
     print(tuple(reversed(mytuple)))
 
-def reversed_dict():
+
+def reversed_dict(): #lol?
     mydict = {"Isak":"Kul","Brian":"Giga kul","Youko":"Japansk"}
-    mydictre = list(reversed(mydict.keys()))
+    mydict_reverse = list(reversed(mydict.keys()))
 
-    for i in mydictre:
-        
+def reverseKeys(dictionary):
+    for key in list(dictionary.keys()):
+        reverseKey = key[::-1]
+        value = dictionary.pop(key)
+        dictionary[reverseKey] = value
+dic = {"isak": 1, "arnas": 2}
+reverseKeys(dic)
+print(dic)
 
 
-    print(mydictre,mydict)
-
-           
-
-reversed_dict()
+def reversed_string():
+    txt = "Python is fun"
+    rtxt = list(reversed(txt))
+    print("".join(rtxt))
