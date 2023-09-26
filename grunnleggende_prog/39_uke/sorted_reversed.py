@@ -1,4 +1,4 @@
-#Sort
+#####Sort#####
 
 def num_liste():
     num_list = [3, 1, 4, 1, 5, 9, 2, 6, 5]
@@ -27,7 +27,7 @@ def len_sort():
     print(fruit_list)
 
 
-#Reversed
+#####Reversed#####
 
 def reversed_list():
     numlist = [1, 2, 3, 4, 5]
