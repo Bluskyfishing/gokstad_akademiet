@@ -1,5 +1,7 @@
 #####Filter#####
 
+#Filtrer ut alle oddetallene fra listen [1, 2, 3, 4, 5, 6]. 
+
 def oddnumberFinder(x):
     if (x % 2) != 0:
         return True
@@ -11,6 +13,7 @@ def oddnumberFinder(x):
 #for i in oddnumbers:
 #    print(i)
 
+#Bruk filter for å finne alle ord i listen ['apple', 'banana', 'cherry', 'date'] som har mer enn 5 bokstaver. 
 
 def lengthfinder(x):
     if len(x) <= 5:
@@ -22,6 +25,7 @@ def lengthfinder(x):
 #longwords = filter(lengthfinder,fruit)
 #print(list(longwords))
 
+#Filtrer ut alle negative tall fra tuplet (-5, -3, 2, 4, -1, 6). 
 
 def negativeBeGone(x):
     if x > 0:
@@ -34,16 +38,15 @@ def negativeBeGone(x):
 #print(tuple(positivenNum))
 
 
-# Bruk en kombinasjon av filter og map for å finne alle kvadrater av tallene i listen [1, 2, 3, 4, 5] som er større enn 10. 
-#def greaterThan10(x):
+#Bruk en kombinasjon av filter og map for å finne alle kvadrater av tallene i listen [1, 2, 3, 4, 5] som er større enn 10. 
 
-#    if x * x > 10:
-#        return True
-#    else:
-#        return False
-#
+def greaterThan10(x):
+    if x * x > 10:
+        return True
+    else:
+        return False
+
 #num = [1, 2, 3, 4, 5]
-#
 #bignum = filter(greaterThan10,num)
 #print(list(bignum))
 
@@ -123,7 +126,7 @@ def ziplists():
     x = zip(list1,list2,list3)
     print(list(x))
 
-#Hvordan ville du brukt zip for å splitte en liste av tupler (f.eks. [('a', 1), ('b', 2), ('c', 3)]) i to separate lister? 
+#Hvordan ville du brukt zip for å splitte en liste av tupler (f.eks. [('a', 1), ('b', 2), ('c', 3)]) i to separate lister? -------------------
 #?????????????????
 
 
