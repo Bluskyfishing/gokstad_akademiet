@@ -1,5 +1,4 @@
 #1
-
 def stop():
     while True:
         inp = input("Write something! (Write 'stop' to stop.)\n")

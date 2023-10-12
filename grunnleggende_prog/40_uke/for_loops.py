@@ -20,7 +20,7 @@ def oddNumbers():
             continue
 
 #4
-def multiplicationTable(): #Not done---------
+def multiplicationTable():
     for i in range(1,11):
         for j in range(1,11):
             print(i*j)
@@ -35,11 +35,13 @@ def sumofNumbers(num):
 #res = sumofNumbers(4)
 #print(res)
 
-#6 #Skriv et program som regner ut produktet av tallene fra 1 til n ved hjelp av en for-løkke.----------
+#6
 def multiplicationNumbers(num):
+    total = 1 
     for i in range(1,num):
-        print(i)
-
+        total *= i
+        print(total)
+    return total
 
 #7 
 def average(list):
