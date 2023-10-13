@@ -5,5 +5,5 @@ def table():
                 print(f"{i}*{j}={i * j}")
             else:
                 print(f"{i}*{j}={i * j}", end=" ")
-
+#idk
 table()
