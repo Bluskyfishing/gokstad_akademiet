@@ -1,3 +1,3 @@
 # gokstad_akademiet
-Skole oppgaver osv...
+School Tasks:
 ![alt text](https://gokstadakademiet.no/wp-content/uploads/2022/09/gokstadakademiet_logo-vertikal-hvit.png)
