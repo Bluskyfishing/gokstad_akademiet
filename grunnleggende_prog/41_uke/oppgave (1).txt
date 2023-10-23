@@ -1,0 +1,19 @@
+Oppgave: Analyser Aldersfordelingen
+
+Gitt følgende datasett med personopplysninger:
+    Fornavn,Etternavn,Alder,Kjønn
+    Ole,Johansen,44,Mann
+    Marte,Knutsen,29,Kvinne
+    Jonas,Pettersen,45,Mann
+    Ingrid,Larsen,38,Kvinne
+    Kjell,Andersen,51,Mann
+    Sara,Hansen,27,Kvinne
+    Eva,Olson,35,Kvinne
+    Per,Nilsen,22,Mann
+    Anna,Paulsen,40,Kvinne
+    Øystein,Hågensen,24,Mann
+
+1. Beregn den totale alderen for alle menn i datasettet.
+2. Beregn den totale alderen for alle kvinner i datasettet.
+3. Hvor mange menn er det i datasettet?
+4. Hvor mange kvinner er det i datasettet?
