@@ -48,11 +48,11 @@ def read_persons(filename: str) -> list | str:
 
 
 # tester
-FILENAME = "persons.csv"
-results = read_persons(FILENAME)
-if isinstance(results, str):
-    print(f"Avslutter, årsak: {results} ")
-    sys.exit()
+#FILENAME = "persons.csv"
+#results = read_persons(FILENAME)
+#if isinstance(results, str):
+#    print(f"Avslutter, årsak: {results} ")
+#    sys.exit()
 
 #for r in results:
 #    print(r)
@@ -65,7 +65,6 @@ def lineCounterInFile(fileName: list):
         counter += 1 
     print("Amount of lines in file:",counter)
 
-lineCounterInFile(FILENAME)
 
 def reversedFileFix(fileName: list):
     with open(fileName, "r") as readFile:
@@ -94,10 +93,10 @@ def findAgeOfGender(fileName: list, gender: str):
             line = readFile.readline().rstrip("\n")
         return age
 
-ageWomen = findAgeOfGender("Female")
-ageMen = findAgeOfGender("Male")
-print("The total age of Women is:",ageWomen)
-print("The total age of Men is:",ageMen)
+#ageWomen = findAgeOfGender(FILENAME, "Female")
+#ageMen = findAgeOfGender(FILENAME, "Male")
+#print("The total age of Women is:",ageWomen)
+#print("The total age of Men is:",ageMen)
 
 def findgender(fileName: list, gender: str):
     with open(fileName, "r") as readFile:
@@ -111,7 +110,7 @@ def findgender(fileName: list, gender: str):
             line = readFile.readline().rstrip("\n")
         return counter
     
-totalWomen = findgender("Female")
-totalMen = findgender("Male")
-print("The total amount of females:",totalWomen)
-print("The total amount of males:",totalMen)
+#totalWomen = findgender(FILENAME, "Female")
+#totalMen = findgender(FILENAME, "Male")
+#print("The total amount of females:",totalWomen)
+#print("The total amount of males:",totalMen)

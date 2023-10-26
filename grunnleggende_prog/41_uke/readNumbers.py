@@ -19,5 +19,3 @@ with open(FILENAME, "r") as fNumbers:
 
         line = fNumbers.readline().rstrip("\n")
         print(" + ".join(arrNumbers), "=", lineSum)
-
-
