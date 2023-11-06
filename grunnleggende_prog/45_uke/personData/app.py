@@ -18,6 +18,10 @@ def showPersonDataJSON():
     personjson = json.dumps(personListjson)
     return render_template("personDataJSON.html", persons=json.loads(personjson))
 
+@app.route('/test')
+def test():
+    return render_template("test.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=7000)

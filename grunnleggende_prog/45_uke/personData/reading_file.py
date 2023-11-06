@@ -11,10 +11,6 @@ def read_persons(filename: str, includeHeader=False) -> list | str:
         for idx, line in enumerate(file_read):
             if idx == 0 and not includeHeader:
                 continue
-            # lager en array med feltene fra linjen
-            # line = "Ole,Johansen,44,Mann\n"
-            # line.rstrip('\n').split('')
-            # line = "Ole,Johansen,44,Mann" split-> ['Ole', 'Johansen', '44', 'Mann']
             person_arr = line.rstrip('\n').split(',')
             
             if idx == 0 and includeHeader:
