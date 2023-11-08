@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 DICESTAT = [0] * 6
 
 def readPositiveNumber():
-    
     rollDecide = 0 
 
     while rollDecide <= 0:
@@ -20,23 +19,25 @@ def readPositiveNumber():
 
     
 def runSimulation(amountRolls):
-
     for i in range(amountRolls):
         roll = rnd.randint(1,6)
-        index = idx = roll - 1
+        print("Rolled a:",roll)
+        index = roll - 1
         DICESTAT[index] += 1
+        print("All dice rolls:",DICESTAT)
         
 
-def viewStats(amountRolls):
-    xValues = [f"One: ({DICESTAT[0]})\n{(DICESTAT[0]/amountRolls)*100:.1f} %",
-               "Two",
-               "Three",
-               "Four",
-               "Five",
-               "Six"]
-
-    plt.xlabel("Dicerolls")
-    plt.ylabel("Amount of rolls")
+def viewStats(amountRolls): #missing amount, % for loop 
+    labelList = ["One","Two","Three","Four","Five","Six"]
+    #xValues = []
+    #for i in range(len(labelList)):
+    #    x = f"{labelList[i]}:({(DICESTAT[i])})\n{(DICESTAT[i]/amountRolls)*100:.1f} %"
+    #    xValues.append(x)
+    
+    xValues = [f"{labelList[index]}:({(DICESTAT[index])})\n{(DICESTAT[index]/amountRolls)*100:.1f} %" for index in range(len(labelList))]
+    
+    plt.xlabel("Dicerolls distribution")
+    plt.ylabel(f"Amount of rolls: {amountRolls}")
     plt.bar(xValues, DICESTAT)
     plt.show()
 

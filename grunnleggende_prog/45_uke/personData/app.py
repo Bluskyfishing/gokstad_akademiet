@@ -1,7 +1,7 @@
 from flask import Flask, render_template
-import random as rnd
 import reading_file
 import json
+import mysql.connector
 
 app = Flask(__name__)
 

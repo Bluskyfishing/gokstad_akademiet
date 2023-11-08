@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from deep_translator import GoogleTranslator
 
 # Create some example data
 x = [1, 2, 3, 4, 5]
@@ -14,4 +15,21 @@ ax = plt.gca()
 ax.set_xlabel("X-axis Label")
 
 # Show the plot
-plt.show()
+#plt.show()
+
+DICESTAT = [0] * 6
+amountRolls = 10
+
+DICESTAT[5] += 3
+
+labelList = ["One","Two","Three","Four","Five","Six"]
+myList = []
+for i in range(len(labelList)):
+    x = f"{labelList[i]}:({(DICESTAT[i])}) \n{(DICESTAT[i]/amountRolls)*100:.1f} %"
+    myList.append(x)
+
+print(myList)
+
+tall = "1"
+translated = GoogleTranslator(source="en", target="no").translate(tall)
+print(tall)
