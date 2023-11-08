@@ -1,25 +1,25 @@
 from flask import Flask, render_template
-#import reading_file
+import findEverythingInColumn
 import json
-import mysql.connector
 
 app = Flask(__name__)
 
-myDB = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="test",
-    database="world"
-)
-
-myCursor = myDB.cursor()
-myCursor.execute("SHOW TABLES")
-tables = myCursor.fetchall() #same as ; its just to run another query 
 
 @app.route('/')
 def showNordicCountries():
-    return render_template("nordicCountries.html", countries=ncountries)
+    ncountry = findEverythingInColumn.selectEverything()
+    return render_template("nordicCountries.html", ncountry=ncountry)
 
+@app.route('/test')
+def test():
+    return render_template("test.html")
+
+#@app.route('/json')
+#def showPersonDataJSON():
+#    
+#    countriesListjson = [dict(zip(countries[0], country)) for country in countries[1:]]
+#    countryjson = json.dumps(countriesListjson)
+#    return render_template("nordicCountries.html", ncountry=json.loads(countryjson))
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=7000)
