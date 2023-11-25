@@ -3,19 +3,19 @@ import random as rnd
 def questionMaker(fileName, questionAmount):
     with open(fileName, "w") as writeFile:
         for i in range(questionAmount):
-                mathLength = rnd.randint(2,7)
-                for number in range(mathLength):
-                    num = rnd.randint(1,101)
-                    operatorInt = rnd.randint(0,1)
-                    operatorList = ["-","+"]
-                    writeFile.write(f"{num} ")
-                    if number == mathLength -1:
-                        continue
-                    writeFile.write(f"{operatorList[operatorInt]} ")
-                writeFile.write("=")
-                if i == questionAmount -1:
+            mathLength = rnd.randint(2,7)
+            for number in range(mathLength):
+                num = rnd.randint(1,101)
+                operatorInt = rnd.randint(0,1)
+                operatorList = ["-","+"]
+                writeFile.write(f"{num} ")
+                if number == mathLength -1:
                     continue
-                writeFile.write("\n")
+                writeFile.write(f"{operatorList[operatorInt]} ")
+            writeFile.write("=")
+            if i == questionAmount -1:
+                continue
+            writeFile.write("\n")
 
 def copyFile(file, outputFile):
     with open(file, "r") as readFile:
