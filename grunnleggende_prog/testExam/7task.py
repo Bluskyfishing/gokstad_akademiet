@@ -50,7 +50,6 @@ def mathSolver(file):
                     total -= intNum
             results.append(total)
         readFile.close()
-
     return expressions, results
 
 def solutionPrint(file):
@@ -78,5 +77,4 @@ def mathQuestionBuilder(file, questionAmount, outputFile, ):
 FILENAME = "regnestykker.txt"
 questionAmount = rnd.randint(1,10) 
 SOLVEDFILE = "regnestykker_løsning.txt"
-
 mathQuestionBuilder(FILENAME, questionAmount, SOLVEDFILE)
