@@ -1,0 +1,5 @@
+A: Antall gensere solgt: 56
+B: Total inntekt fra gensere: 22344
+C: Alle kunder som kjøpte varer i 'XL': 5
+D: Alle kunder som kjøpte mer enn 3 varer: 6
+E: Den meste populære fargen(e) var: Blå
