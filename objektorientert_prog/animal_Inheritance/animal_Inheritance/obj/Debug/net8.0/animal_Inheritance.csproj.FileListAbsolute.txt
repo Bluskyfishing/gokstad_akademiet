@@ -1,0 +1,15 @@
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\bin\Debug\net8.0\animal_Inheritance.exe
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\bin\Debug\net8.0\animal_Inheritance.deps.json
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\bin\Debug\net8.0\animal_Inheritance.runtimeconfig.json
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\bin\Debug\net8.0\animal_Inheritance.dll
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\bin\Debug\net8.0\animal_Inheritance.pdb
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\animal_Inheritance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\animal_Inheritance.AssemblyInfoInputs.cache
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\animal_Inheritance.AssemblyInfo.cs
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\animal_Inheritance.csproj.CoreCompileInputs.cache
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\animal_Inheritance.sourcelink.json
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\animal_Inheritance.dll
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\refint\animal_Inheritance.dll
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\animal_Inheritance.pdb
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\animal_Inheritance.genruntimeconfig.cache
+C:\Users\Isak\source\repos\Bluskyfishing\gokstad_akademiet\objektorientert_prog\animal_Inheritance\animal_Inheritance\obj\Debug\net8.0\ref\animal_Inheritance.dll
