@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\luhnChecker",
+    "\\luhnChecker\\luhnChecker"
   ],
+  "SelectedNode": "\\luhnChecker\\luhnChecker\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
