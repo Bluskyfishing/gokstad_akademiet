@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Isak\\Source\\Repos\\Bluskyfishing\\gokstad_akademiet\\objektorientert_prog\\luhnChecker\\luhnChecker\\luhnChecker.csproj": {}
+    "C:\\Users\\Isak\\source\\repos\\Bluskyfishing\\gokstad_akademiet\\objektorientert_prog\\luhnChecker\\luhnChecker\\luhnChecker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Isak\\Source\\Repos\\Bluskyfishing\\gokstad_akademiet\\objektorientert_prog\\luhnChecker\\luhnChecker\\luhnChecker.csproj": {
+    "C:\\Users\\Isak\\source\\repos\\Bluskyfishing\\gokstad_akademiet\\objektorientert_prog\\luhnChecker\\luhnChecker\\luhnChecker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Isak\\Source\\Repos\\Bluskyfishing\\gokstad_akademiet\\objektorientert_prog\\luhnChecker\\luhnChecker\\luhnChecker.csproj",
+        "projectUniqueName": "C:\\Users\\Isak\\source\\repos\\Bluskyfishing\\gokstad_akademiet\\objektorientert_prog\\luhnChecker\\luhnChecker\\luhnChecker.csproj",
         "projectName": "luhnChecker",
-        "projectPath": "C:\\Users\\Isak\\Source\\Repos\\Bluskyfishing\\gokstad_akademiet\\objektorientert_prog\\luhnChecker\\luhnChecker\\luhnChecker.csproj",
+        "projectPath": "C:\\Users\\Isak\\source\\repos\\Bluskyfishing\\gokstad_akademiet\\objektorientert_prog\\luhnChecker\\luhnChecker\\luhnChecker.csproj",
         "packagesPath": "C:\\Users\\Isak\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Isak\\source\\repos\\Bluskyfishing\\gokstad_akademiet\\objektorientert_prog\\luhnChecker\\luhnChecker\\obj\\",
         "projectStyle": "PackageReference",
