@@ -12,7 +12,7 @@ namespace Ikea_abstract.Products
         protected string shelfnumber;
         protected string description;
 
-        public Product(float price, string shelfnumber, string description)
+        protected Product(float price, string shelfnumber, string description)
         {
             this.price = price;
             this.shelfnumber = shelfnumber;
