@@ -8,9 +8,9 @@ namespace Ikea_abstract.Products
 {
     internal abstract class Product
     {
-        public float price;
-        public string shelfnumber;
-        public string description;
+        protected float price;
+        protected string shelfnumber;
+        protected string description;
 
         public Product(float price, string shelfnumber, string description)
         {
