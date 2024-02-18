@@ -16,14 +16,23 @@ namespace TextDecorator
             {
                 if (arguments[1] == "#") //block mode
                 {
-                    Console.WriteLine("#################");
-                    Console.WriteLine($"#{arguments[2]}#");
-                    Console.WriteLine("#################");
+                    int counter = 0;
+
+                    for (int i = 0; i < arguments[2].Length +2; i++)
+                    {
+                        Console.Write("#");
+                        if (i == arguments[2].Length +1 && counter == 0)
+                        {
+                            Console.WriteLine($"\n#{arguments[2]}#");
+                            counter++;
+                            i = -1;
+                        }
+                    }
                 }
-                if (arguments[1].ToLower() == "alt") //alt mode
+                if (arguments[1].ToLower() == "alt") //alternative caps
                 {
                     int index = 1;
-                    foreach (char letter in arguments[2]) //Noe rart Skal være: "ThIs Is A tEsT."
+                    foreach (char letter in arguments[2]) 
                     {
                         if (letter == ' ')
                             Console.Write(letter);
@@ -32,10 +41,14 @@ namespace TextDecorator
                             Console.Write(char.ToLower(letter));
                             index++;
                         }
-                        else if (index % 2 != 0) //Kan bare ha else bedre sånn?
+                        else if (index % 2 != 0)
                         {
                             Console.Write(char.ToUpper(letter));
                             index++;
+                        }
+                        else 
+                        { 
+                            Console.Write(letter); 
                         }
                     }
 
@@ -43,7 +56,7 @@ namespace TextDecorator
                 char[] consonants = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
                 char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
 
-                if (arguments[1].ToLower() == "pig")
+                if (arguments[1].ToLower() == "pig") //Pig latin
                 {
                     string[] words = arguments[2].ToLower().Split(' ');
                     foreach (string word in words)
@@ -60,7 +73,7 @@ namespace TextDecorator
                                 {
                                     Console.Write(letter);
                                 }
-                                Console.Write(word[0] + word[1] + "ay" + " " ); //Noe rart med at the er char + string?=
+                                Console.Write(Char.ToString(word[0]) + Char.ToString(word[1]) + "ay" + " " );
                             }
                             else
                             {
@@ -68,10 +81,10 @@ namespace TextDecorator
                                 {
                                     Console.Write(letter);
                                 }
-                                Console.Write(word[1] + "ay" + " ");
+                                Console.Write(Char.ToString(word[1]) + "ay" + " ");
                             }
-                        }
 
+                        }
                     }
                 }
             }
