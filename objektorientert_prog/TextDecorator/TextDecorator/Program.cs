@@ -67,23 +67,21 @@ namespace TextDecorator
                         }
                         else if (consonants.Contains(word[0])) //må bli gjort bedre, kan være opp til 3 konnsonanter for loop? :)
                         {
-                            if (consonants.Contains(word[1]))
-                            {
-                                foreach (char letter in word.Substring(2))
-                                {
-                                    Console.Write(letter);
-                                }
-                                Console.Write(Char.ToString(word[0]) + Char.ToString(word[1]) + "ay" + " " );
-                            }
-                            else
-                            {
-                                foreach (char letter in word.Substring(1))
-                                {
-                                    Console.Write(letter);
-                                }
-                                Console.Write(Char.ToString(word[1]) + "ay" + " ");
-                            }
+                            List<char> startingLetters = new List<char>();
 
+                            foreach (char letter in word)
+                            {
+                                if (vowels.Contains(letter))
+                                {
+                                    break;
+                                }
+                                else if (consonants.Contains(letter))
+                                {
+                                    startingLetters.Add(letter);
+                                }
+                            }
+                            string strStartingLetters = string.Join("", startingLetters);
+                            Console.Write($"{word.Substring(startingLetters.Count)}{strStartingLetters}ay "); //word[startingLetters.Count -1]
                         }
                     }
                 }
