@@ -99,29 +99,42 @@ namespace TextDecorator
                                 }
                             }
 
-                            string strStartLetters = string.Join("", startingLetters); // def keepcapital? og fikse "?"-tegn 
+                            string strStartLetters = string.Join("", startingLetters);
                             
                             if (Char.IsUpper(strStartLetters[0]))
                             {
-                                string capitalizeWord = Char.ToUpper(word.Substring(startingLetters.Count)[0]) + word.Substring(startingLetters.Count);
+                                string capitalizeWord = Char.ToUpper(word.Substring(startingLetters.Count)[0]) + word.Substring(startingLetters.Count +1);
                                 string uncapitalizeWord = Char.ToLower(strStartLetters[0]) + strStartLetters.Substring(1);
+                                Console.WriteLine(capitalizeWord);
                                 string completeWord = capitalizeWord + uncapitalizeWord;
                                 char symbol = SymbolFinder(completeWord, vowels, consonants);
 
                                 if (symbol == 'x') 
                                 {
-                                    Console.WriteLine(completeWord + "ay" + " ");
+                                    Console.Write(completeWord + "ay" + " ");
                                 }
                                 else
                                 {
                                     string removedSymbol = completeWord.Remove(completeWord.IndexOf(symbol), 1);
-                                    Console.WriteLine(removedSymbol + symbol);
+                                    Console.Write(removedSymbol + "ay"+ symbol + " ");
                                 }
                             }
                             else
                             {
+                                string firstHalf =  word.Substring(startingLetters.Count);
+                                string secondHalf = strStartLetters;
+                                string completeWord = firstHalf + secondHalf;
+                                char symbol = SymbolFinder(completeWord, vowels, consonants);
 
-                                Console.Write($"{word.Substring(startingLetters.Count)}{strStartLetters}" + "ay" + " ");
+                                if (symbol == 'x')
+                                {
+                                    Console.Write(completeWord + "ay" + " ");
+                                }
+                                else
+                                {
+                                    string removedSymbol = completeWord.Remove(completeWord.IndexOf(symbol), 1);
+                                    Console.Write(removedSymbol + "ay" + symbol + " ");
+                                }
                             }
                         }
                     }
