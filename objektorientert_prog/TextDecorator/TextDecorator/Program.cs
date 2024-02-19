@@ -1,10 +1,26 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Diagnostics.Metrics;
 using System.Diagnostics.Tracing;
+using System.Runtime.Serialization.Formatters;
 
 namespace TextDecorator
 {
     internal class Program
     {
+        static char SymbolFinder(string text, char[] array1, char[] array2)
+        {
+            foreach (char letter in text)
+            {
+                char lowerLetter = char.ToLower(letter);
+
+                if (!array1.Contains(lowerLetter) && !array2.Contains(lowerLetter))
+                {
+                    return lowerLetter;
+                }
+            }
+            return 'x';
+        }
         static void Main(string[] args)
         {
             string[] arguments = Environment.GetCommandLineArgs();
@@ -69,8 +85,6 @@ namespace TextDecorator
                         else if (consonants.Contains(Char.ToLower(word[0])))
                         {
                             List<char> startingLetters = new List<char>();
-                            List<int> capitalLettersIndex = new List<int>();
-                            List<string> pigLatinWords = new List<string>();
 
                             foreach (char letter in word)
                             {
@@ -84,17 +98,29 @@ namespace TextDecorator
                                     startingLetters.Add(letter);
                                 }
                             }
-                            string strStartLetters = string.Join("", startingLetters); //trenger a capitalize må sjekke hvert ord om det er capitalized def keepcapital? og fikse "?"-tegn 
 
+                            string strStartLetters = string.Join("", startingLetters); // def keepcapital? og fikse "?"-tegn 
+                            
                             if (Char.IsUpper(strStartLetters[0]))
                             {
                                 string capitalizeWord = Char.ToUpper(word.Substring(startingLetters.Count)[0]) + word.Substring(startingLetters.Count);
-                                string uncapitaliceWord = Char.ToLower(strStartLetters[0]) + strStartLetters.Substring(1);
-                                Console.Write(capitalizeWord + uncapitaliceWord + "ay" + " ");
+                                string uncapitalizeWord = Char.ToLower(strStartLetters[0]) + strStartLetters.Substring(1);
+                                string completeWord = capitalizeWord + uncapitalizeWord;
+                                char symbol = SymbolFinder(completeWord, vowels, consonants);
 
+                                if (symbol == 'x') 
+                                {
+                                    Console.WriteLine(completeWord + "ay" + " ");
+                                }
+                                else
+                                {
+                                    string removedSymbol = completeWord.Remove(completeWord.IndexOf(symbol), 1);
+                                    Console.WriteLine(removedSymbol + symbol);
+                                }
                             }
                             else
                             {
+
                                 Console.Write($"{word.Substring(startingLetters.Count)}{strStartLetters}" + "ay" + " ");
                             }
                         }
