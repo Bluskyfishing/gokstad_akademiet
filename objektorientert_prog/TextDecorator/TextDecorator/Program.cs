@@ -29,6 +29,7 @@ namespace TextDecorator
                         }
                     }
                 }
+
                 if (arguments[1].ToLower() == "alt") //alternative caps
                 {
                     int index = 1;
@@ -65,7 +66,7 @@ namespace TextDecorator
                         {
                             Console.Write(word + "yay" + " ");
                         }
-                        else if (consonants.Contains(word[0])) //må bli gjort bedre, kan være opp til 3 konnsonanter for loop? :)
+                        else if (consonants.Contains(word[0]))
                         {
                             List<char> startingLetters = new List<char>();
 
@@ -80,8 +81,8 @@ namespace TextDecorator
                                     startingLetters.Add(letter);
                                 }
                             }
-                            string strStartingLetters = string.Join("", startingLetters);
-                            Console.Write($"{word.Substring(startingLetters.Count)}{strStartingLetters}ay "); //word[startingLetters.Count -1]
+                            string strStartingLetters = string.Join("", startingLetters); //trenger a capitalize må sjekke hvert ord om det er capitalized def keepcapital? og fikse "?"-tegn 
+                            Console.Write($"{word.Substring(startingLetters.Count)}{strStartingLetters}" + "ay" + " ");
                         }
                     }
                 }
