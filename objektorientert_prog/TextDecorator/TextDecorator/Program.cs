@@ -82,11 +82,12 @@ namespace TextDecorator
                     }
 
                 }
-                char[] consonants = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
-                char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
 
                 else if (arguments[1].ToLower() == "pig") //Pig latin
                 {
+                    char[] consonants = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
+                    char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+
                     string[] words = arguments[2].Split(' ');
                     foreach (string word in words)
                     {
