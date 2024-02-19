@@ -61,25 +61,16 @@ namespace TextDecorator
                 {
                     string[] words = arguments[2].Split(' ');
                     foreach (string word in words)
-                    {
-                        List<int> capitalLettersIndex = new List<int>();
-                        foreach (char letter in word)
-                        {
-                            if (Char.IsUpper(letter))
-                            {
-                                int index = word.IndexOf(letter);
-                                capitalLettersIndex.Add(index);
-                            }
-                        }
-                       
+                    {  
                         if (vowels.Contains(Char.ToLower(word[0])))
                         {
                             Console.Write(word + "yay" + " ");
                         }
-
                         else if (consonants.Contains(Char.ToLower(word[0])))
                         {
                             List<char> startingLetters = new List<char>();
+                            List<int> capitalLettersIndex = new List<int>();
+                            List<string> pigLatinWords = new List<string>();
 
                             foreach (char letter in word)
                             {
@@ -87,13 +78,25 @@ namespace TextDecorator
                                 {
                                     break;
                                 }
-                                else if (consonants.Contains(Char.ToLower(letter)))
+
+                                else if (consonants.Contains(Char.ToLower(letter)))  
                                 {
-                                    startingLetters.Add(Char.ToLower(letter));
+                                    startingLetters.Add(letter);
                                 }
                             }
-                            string strStartingLetters = string.Join("", startingLetters); //trenger a capitalize må sjekke hvert ord om det er capitalized def keepcapital? og fikse "?"-tegn 
-                            Console.Write($"{word.Substring(startingLetters.Count)}{strStartingLetters}" + "ay" + " ");
+                            string strStartLetters = string.Join("", startingLetters); //trenger a capitalize må sjekke hvert ord om det er capitalized def keepcapital? og fikse "?"-tegn 
+
+                            if (Char.IsUpper(strStartLetters[0]))
+                            {
+                                string capitalizeWord = Char.ToUpper(word.Substring(startingLetters.Count)[0]) + word.Substring(startingLetters.Count);
+                                string uncapitaliceWord = Char.ToLower(strStartLetters[0]) + strStartLetters.Substring(1);
+                                Console.Write(capitalizeWord + uncapitaliceWord + "ay" + " ");
+
+                            }
+                            else
+                            {
+                                Console.Write($"{word.Substring(startingLetters.Count)}{strStartLetters}" + "ay" + " ");
+                            }
                         }
                     }
                 }
