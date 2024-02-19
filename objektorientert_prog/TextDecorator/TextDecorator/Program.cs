@@ -59,26 +59,37 @@ namespace TextDecorator
 
                 if (arguments[1].ToLower() == "pig") //Pig latin
                 {
-                    string[] words = arguments[2].ToLower().Split(' ');
+                    string[] words = arguments[2].Split(' ');
                     foreach (string word in words)
                     {
-                        if (vowels.Contains(word[0]))
+                        List<int> capitalLettersIndex = new List<int>();
+                        foreach (char letter in word)
+                        {
+                            if (Char.IsUpper(letter))
+                            {
+                                int index = word.IndexOf(letter);
+                                capitalLettersIndex.Add(index);
+                            }
+                        }
+                       
+                        if (vowels.Contains(Char.ToLower(word[0])))
                         {
                             Console.Write(word + "yay" + " ");
                         }
-                        else if (consonants.Contains(word[0]))
+
+                        else if (consonants.Contains(Char.ToLower(word[0])))
                         {
                             List<char> startingLetters = new List<char>();
 
                             foreach (char letter in word)
                             {
-                                if (vowels.Contains(letter))
+                                if (vowels.Contains(Char.ToLower(letter)))
                                 {
                                     break;
                                 }
-                                else if (consonants.Contains(letter))
+                                else if (consonants.Contains(Char.ToLower(letter)))
                                 {
-                                    startingLetters.Add(letter);
+                                    startingLetters.Add(Char.ToLower(letter));
                                 }
                             }
                             string strStartingLetters = string.Join("", startingLetters); //trenger a capitalize må sjekke hvert ord om det er capitalized def keepcapital? og fikse "?"-tegn 
