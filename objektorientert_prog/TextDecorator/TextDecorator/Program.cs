@@ -9,7 +9,7 @@ namespace TextDecorator
 {
     internal class Program
     {
-        static char SymbolFinder(string text, char[] array1, char[] array2) //Compares to lists to find an element that isnt in neither.
+        static char SymbolFinder(string text, char[] array1, char[] array2) //Compares to lists to find an element that isnt in either.
         {
             foreach (char letter in text)
             {
@@ -24,7 +24,7 @@ namespace TextDecorator
         }
         static void Main(string[] args)
         {
-            string[] arguments = Environment.GetCommandLineArgs();
+            string[] arguments = Environment.GetCommandLineArgs(); //Array with filepath and arguments if any.
 
             if (arguments.Length == 1)
             {
@@ -50,25 +50,25 @@ namespace TextDecorator
                 {
                     int counter = 0;
 
-                    for (int i = 0; i < text.Length +2; i++)
+                    for (int i = 0; i < text.Length +2; i++) //+2 for the # to go over the text.
                     {
                         Console.Write("#");
-                        if (i == text.Length +1 && counter == 0)
+                        if (i == text.Length +1 && counter == 0) 
                         {
                             Console.WriteLine($"\n#{text}#");
-                            counter++;
-                            i = -1;
+                            counter++; //continue the loop for the floor of the box.
+                            i = -1; //Sets to -1 to finish box
                         }
                     }
                 }
 
-                else if (decorator == "alt") //alternative caps
+                else if (decorator == "alt") //alternating caps
                 {
                     int index = 1;
 
                     foreach (char letter in text) 
                     {
-                        if (letter == ' ')
+                        if (letter == ' ') //blankspace doesnt affect next upper/lower case. 
                             Console.Write(letter);
                         else if (index % 2 == 0)
                         {
@@ -80,7 +80,7 @@ namespace TextDecorator
                             Console.Write(char.ToUpper(letter));
                             index++;
                         }
-                        else 
+                        else //prints if text is not a letter. 
                         { 
                             Console.Write(letter); 
                         }
@@ -96,11 +96,13 @@ namespace TextDecorator
 
                     foreach (string word in wordArray)
                     {
-                        if (vowels.Contains(Char.ToLower(word[0])))
+                        char firstLetter = char.ToLower(word[0]);
+
+                        if (vowels.Contains(firstLetter))
                         {
                             Console.Write(word + "yay" + " ");
                         }
-                        else if (consonants.Contains(Char.ToLower(word[0])))
+                        else if (consonants.Contains(firstLetter))
                         {
                             List<char> startingLetters = new List<char>();
 
