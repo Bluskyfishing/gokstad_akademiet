@@ -9,7 +9,7 @@ namespace TextDecorator
 {
     internal class Program
     {
-        static char SymbolFinder(string text, char[] array1, char[] array2)
+        static char SymbolFinder(string text, char[] array1, char[] array2) //Compares to lists to find an element that isnt in neither.
         {
             foreach (char letter in text)
             {
@@ -25,6 +25,7 @@ namespace TextDecorator
         static void Main(string[] args)
         {
             string[] arguments = Environment.GetCommandLineArgs();
+
             if (arguments.Length == 1)
             {
                 Console.WriteLine("No arguments given! Try the help command!");
@@ -37,31 +38,35 @@ namespace TextDecorator
                 }
                 else
                 {
-                    Console.WriteLine("Too few arguments or unknown argument! Try the help command!");
+                    Console.WriteLine("Too few arguments! Try the help command!");
                 }
             }
             else if (arguments.Length == 3) 
             {
-                if (arguments[1] == "#") //block mode
+                string decorator = arguments[1].ToLower();
+                string text = arguments[2];
+
+                if (decorator == "#") //block mode
                 {
                     int counter = 0;
 
-                    for (int i = 0; i < arguments[2].Length +2; i++)
+                    for (int i = 0; i < text.Length +2; i++)
                     {
                         Console.Write("#");
-                        if (i == arguments[2].Length +1 && counter == 0)
+                        if (i == text.Length +1 && counter == 0)
                         {
-                            Console.WriteLine($"\n#{arguments[2]}#");
+                            Console.WriteLine($"\n#{text}#");
                             counter++;
                             i = -1;
                         }
                     }
                 }
 
-                else if (arguments[1].ToLower() == "alt") //alternative caps
+                else if (decorator == "alt") //alternative caps
                 {
                     int index = 1;
-                    foreach (char letter in arguments[2]) 
+
+                    foreach (char letter in text) 
                     {
                         if (letter == ' ')
                             Console.Write(letter);
@@ -83,13 +88,13 @@ namespace TextDecorator
 
                 }
 
-                else if (arguments[1].ToLower() == "pig") //Pig latin
+                else if (decorator == "pig") //Pig latin
                 {
                     char[] consonants = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
                     char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+                    string[] wordArray = text.Split(' ');
 
-                    string[] words = arguments[2].Split(' ');
-                    foreach (string word in words)
+                    foreach (string word in wordArray)
                     {
                         if (vowels.Contains(Char.ToLower(word[0])))
                         {
