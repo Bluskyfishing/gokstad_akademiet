@@ -92,28 +92,28 @@ namespace TextDecorator
                 {
                     char[] consonants = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z' };
                     char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
-                    string[] wordArray = text.Split(' ');
+                    string[] wordArray = text.Split(' '); //splits texts string by blankspaces
 
                     foreach (string word in wordArray)
                     {
                         char firstLetter = char.ToLower(word[0]);
 
-                        if (vowels.Contains(firstLetter))
+                        if (vowels.Contains(firstLetter)) //Checks if firstletter is a vowel.
                         {
                             Console.Write(word + "yay" + " ");
                         }
-                        else if (consonants.Contains(firstLetter))
+                        else if (consonants.Contains(firstLetter)) //Check if firstletter is a consonant.
                         {
                             List<char> startingLetters = new List<char>();
 
-                            foreach (char letter in word)
+                            foreach (char letter in word) //Checks for consonant clusters.
                             {
-                                if (vowels.Contains(Char.ToLower(letter)))
+                                if (vowels.Contains(char.ToLower(letter)))
                                 {
                                     break;
                                 }
 
-                                else if (consonants.Contains(Char.ToLower(letter)))
+                                else if (consonants.Contains(char.ToLower(letter)))
                                 {
                                     startingLetters.Add(letter);
                                 }
