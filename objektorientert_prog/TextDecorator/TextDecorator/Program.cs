@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics.Metrics;
 using System.Diagnostics.Tracing;
+using System.Reflection.PortableExecutable;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters;
 
@@ -105,6 +106,7 @@ namespace TextDecorator
                         else if (consonants.Contains(firstLetter)) //Check if firstletter is a consonant.
                         {
                             List<char> startingLetters = new List<char>();
+                            bool upperCase = false;
 
                             foreach (char letter in word) //Checks for consonant clusters.
                             {
@@ -115,46 +117,43 @@ namespace TextDecorator
 
                                 else if (consonants.Contains(char.ToLower(letter)))
                                 {
+                                    if (char.IsUpper(letter))
+                                    {
+                                        upperCase = true;
+                                    }
                                     startingLetters.Add(letter);
                                 }
                             }
 
                             string strStartLetters = string.Join("", startingLetters);
+                            char symbol = SymbolFinder(word, vowels, consonants);
+                            string pigLatinWord = word.Substring(strStartLetters.Length) + strStartLetters.ToLower() + "ay";
 
-                            if (Char.IsUpper(strStartLetters[0]))
+                            if (upperCase)
                             {
-                                string capitalizeWord = Char.ToUpper(word.Substring(startingLetters.Count)[0]) + word.Substring(startingLetters.Count + 1);
-                                string uncapitalizeWord = Char.ToLower(strStartLetters[0]) + strStartLetters.Substring(1);
-                                string completeWord = capitalizeWord + uncapitalizeWord;
-                                char symbol = SymbolFinder(completeWord, vowels, consonants);
-
-                                if (symbol == 'x')
+                                if (symbol != 'x')
                                 {
-                                    Console.Write(completeWord + "ay" + " ");
+
+                                    Console.Write(char.ToUpper(pigLatinWord[0]) + pigLatinWord.Substring(1) + symbol + " ");
                                 }
                                 else
                                 {
-                                    string removedSymbol = completeWord.Remove(completeWord.IndexOf(symbol), 1);
-                                    Console.Write(removedSymbol + "ay" + symbol + " ");
+                                    Console.Write(char.ToUpper(pigLatinWord[0]) + pigLatinWord.Substring(1) + " ");
+
                                 }
                             }
                             else
                             {
-                                string firstHalf = word.Substring(startingLetters.Count);
-                                string secondHalf = strStartLetters;
-                                string completeWord = firstHalf + secondHalf;
-                                char symbol = SymbolFinder(completeWord, vowels, consonants);
-
-                                if (symbol == 'x')
+                                if (symbol != 'x')
                                 {
-                                    Console.Write(completeWord + "ay" + " ");
+                                    Console.Write(pigLatinWord + symbol + " ");
+
                                 }
                                 else
                                 {
-                                    string removedSymbol = completeWord.Remove(completeWord.IndexOf(symbol), 1);
-                                    Console.Write(removedSymbol + "ay" + symbol + " ");
+                                    Console.Write(pigLatinWord + " ");
                                 }
-                            }
+                            } 
                         }
                     }
                 }
