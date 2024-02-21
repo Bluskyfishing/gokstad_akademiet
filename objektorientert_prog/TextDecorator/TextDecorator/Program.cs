@@ -126,15 +126,16 @@ namespace TextDecorator
                             }
 
                             string strStartLetters = string.Join("", startingLetters);
-                            char symbol = SymbolFinder(word, vowels, consonants);
                             string pigLatinWord = word.Substring(strStartLetters.Length) + strStartLetters.ToLower() + "ay";
+
+                            char symbol = SymbolFinder(word, vowels, consonants);
 
                             if (upperCase)
                             {
                                 if (symbol != 'x')
                                 {
-
-                                    Console.Write(char.ToUpper(pigLatinWord[0]) + pigLatinWord.Substring(1) + symbol + " ");
+                                    string pigLatinNoSymbol = pigLatinWord.Remove(pigLatinWord.IndexOf(symbol), 1);
+                                    Console.Write(char.ToUpper(pigLatinNoSymbol[0]) + pigLatinNoSymbol.Substring(1) + symbol + " ");
                                 }
                                 else
                                 {
@@ -146,8 +147,8 @@ namespace TextDecorator
                             {
                                 if (symbol != 'x')
                                 {
-                                    Console.Write(pigLatinWord + symbol + " ");
-
+                                    string pigLatinNoSymbol = pigLatinWord.Remove(pigLatinWord.IndexOf(symbol), 1);
+                                    Console.Write(pigLatinNoSymbol + symbol + " ");
                                 }
                                 else
                                 {
