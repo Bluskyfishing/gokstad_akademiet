@@ -45,10 +45,10 @@ namespace TextDecorator
                     Console.WriteLine("Too few arguments! Try the help command!");
                 }
             }
-            else if (arguments.Length == 3) 
+            else if (arguments.Length >= 3) 
             {
                 string decorator = arguments[1].ToLower();
-                string text = arguments[2];
+                string text = string.Join(" ", arguments.Skip(2)); //converts the arguments after the 2 first to a string.
 
                 if (decorator == "#") //Block mode
                 {
@@ -167,7 +167,7 @@ namespace TextDecorator
                         }
                     }
                 }
-                else if (arguments.Length == 3)
+                else
                 {
                     Console.WriteLine("Unknown decorator used! Try the help command!");
                 }
