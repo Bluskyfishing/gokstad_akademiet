@@ -25,7 +25,7 @@ namespace TextDecorator.MethodPig
                     if (symbol != '0')
                     {
                         string pigLatinNoSymbol = word.Remove(word.IndexOf(symbol), 1) + "yay"; //Finds the symbol and removes it from the string. 
-                        Console.WriteLine(pigLatinNoSymbol + symbol + " ");
+                        Console.Write(pigLatinNoSymbol + symbol + " ");
                     }
                     else
                     {
