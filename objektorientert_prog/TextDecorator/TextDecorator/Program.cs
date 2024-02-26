@@ -47,7 +47,7 @@ namespace TextDecorator
 
                 else if (decorator == "pig") //Pig latin
                 {
-                    string[] wordArray = text.Split(' '); //Splits text string by blankspaces
+                    string[] wordArray = text.Split(' '); //Splits text string by blankspaces, for iteration through words.
 
                     PigLatinClass.PigLatinMode(wordArray);
 
