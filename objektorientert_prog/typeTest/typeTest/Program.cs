@@ -43,7 +43,7 @@ namespace typTest
         {
             //lol
             string lowerInput = input.ToLower();
-            Array arrayReverse = lowerInput.ToCharArray();
+            Array arrayReverse = lowerInput.ToArray();
             Array.Reverse(arrayReverse);
             string reverseWord = arrayReverse.ToString();
             Console.WriteLine(reverseWord);
