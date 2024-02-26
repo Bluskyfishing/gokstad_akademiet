@@ -21,7 +21,16 @@ namespace TextDecorator.MethodPig
 
                 if (vowels.Contains(firstLetter)) //Checks if firstletter is a vowel.
                 {
-                    Console.Write(word + "yay" + " ");
+                    char symbol = ListCompareClass.ListsComparison(word, vowels, consonants); //Returns symbol if exists.
+                    if (symbol != '0')
+                    {
+                        string pigLatinNoSymbol = word.Remove(word.IndexOf(symbol), 1) + "yay"; //Finds the symbol and removes it from the string. 
+                        Console.WriteLine(pigLatinNoSymbol + symbol + " ");
+                    }
+                    else
+                    {
+                        Console.Write(word + "yay" + " ");
+                    }
                 }
                 else if (consonants.Contains(firstLetter)) //Check if firstletter is a consonant.
                 {
@@ -36,7 +45,7 @@ namespace TextDecorator.MethodPig
                             break;
                         }
 
-                        if (vowels.Contains(char.ToLower(letter))) //Go
+                        if (vowels.Contains(char.ToLower(letter))) //Goes out of loop if vowel.
                         {
                             break;
                         }
@@ -51,14 +60,13 @@ namespace TextDecorator.MethodPig
                         }
 
                     }
-
                     string strStartLetters = string.Join("", startingLetters); //Creates a string of the consonant cluster.
                     string pigLatinWord = word.Substring(strStartLetters.Length) + strStartLetters.ToLower() + "ay"; //Creates a string out of the cluster and rest of the word + ay
                     char symbol = ListCompareClass.ListsComparison(word, vowels, consonants); //Returns symbol if exists.
 
                     if (upperCase) //If capitalized word
                     {
-                        if (symbol != 'x')
+                        if (symbol != '0')
                         {
                             string pigLatinNoSymbol = pigLatinWord.Remove(pigLatinWord.IndexOf(symbol), 1); //Finds the symbol and removes it from the string. 
                             Console.Write(char.ToUpper(pigLatinNoSymbol[0]) + pigLatinNoSymbol.Substring(1) + symbol + " "); //Capitalizes first letter and puts rest of word together with the symbol.
@@ -71,7 +79,7 @@ namespace TextDecorator.MethodPig
                     }
                     else //If uncapitalized word
                     {
-                        if (symbol != 'x')
+                        if (symbol != '0')
                         {
                             string pigLatinNoSymbol = pigLatinWord.Remove(pigLatinWord.IndexOf(symbol), 1); //Finds the symbol and removes it from the string. 
                             Console.Write(pigLatinNoSymbol + symbol + " "); //Writes the word with the symbol.
