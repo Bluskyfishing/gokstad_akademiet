@@ -41,12 +41,10 @@ namespace typTest
         }
         public static bool ChecksIfPalindrome(string input)
         {
-            //lol
             string lowerInput = input.ToLower();
-            Array arrayReverse = lowerInput.ToArray();
-            Array.Reverse(arrayReverse);
-            string reverseWord = arrayReverse.ToString();
-            Console.WriteLine(reverseWord);
+            char[] charArray = lowerInput.ToCharArray();
+            Array.Reverse(charArray);
+            string reverseWord = new string(charArray);
 
             if (lowerInput == reverseWord)
             {
