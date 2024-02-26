@@ -15,7 +15,7 @@ namespace TextDecorator
             
             if (arguments.Length == 1)
             {
-                Console.WriteLine("No arguments given! Try the help command!");
+                Console.WriteLine("Code compiled! Try the help command to see how to use the program!");
             }
             else if (arguments.Length == 2)
             {
