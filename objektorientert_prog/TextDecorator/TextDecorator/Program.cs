@@ -23,7 +23,7 @@ namespace TextDecorator
 
                 if (decorator.ToLower() == "help")
                 {
-                    Console.WriteLine($"Command syntax: <file> <Decorator> <Text>\nAvailable decorators: '#', 'alt', 'pig'");
+                    Console.WriteLine("Command syntax: <file> <Decorator> <Text>\nAvailable decorators: '#', 'alt', 'pig'");
                 }
                 else
                 {

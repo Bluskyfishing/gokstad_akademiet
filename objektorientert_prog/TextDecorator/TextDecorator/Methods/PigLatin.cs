@@ -45,7 +45,7 @@ namespace TextDecorator.MethodPig
                             break;
                         }
 
-                        if (vowels.Contains(char.ToLower(letter))) //Goes out of loop if v
+                        if (vowels.Contains(char.ToLower(letter))) //Goes out of loop if vowel.
                         {
                             break;
                         }
