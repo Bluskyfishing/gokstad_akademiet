@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.InteropServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace SudokuSolver
 {
     internal class Program
@@ -8,30 +10,28 @@ namespace SudokuSolver
         {
             public bool IsValidSudoku(char[][] board)
             {
-                if (board.Length == 9 )
+                for (int i = 0; i < board.Length; i++)
                 {
-                    for ( int i = 0; i < board.Length; i++ )
+                    List<char> listWithoutDuplicates = new List<char>();
+                    
+                    for (int j = 0; j < board[i].Length; j++)
                     {
-                        if (board[i].Length == 9 )
+                        Console.WriteLine("column");
+                        Console.WriteLine(board[j][i]);
+                        if (board[i][j] == '.') continue; 
+                        if (!listWithoutDuplicates.Contains(board[i][j])) //Checks row if duplicate.
                         {
-                            for (int j = 0; j < board[i].Length; j++) 
-                            {                                         
-                                if (Char.IsDigit(board[i][j]) || board[i][j] == '.')
-                                {
-                                    if (Array.IndexOf(board[i], board[i][j]) >= 0) //check if number is in row.(vertical)
-                                    {
-                                        return false;
-                                    }
-                                    if (Array.IndexOf(board[j], board[j][i]) >= 0) //check if number is in column. (horizontal)
-                                    {
-                                        return false;
-                                    } 
-                                }
-
-                            }
+                            listWithoutDuplicates.Add(board[i][j]);
                         }
+                        else
+                        {
+                            return false;
+                        }
+
+
                     }
                 }
+                return true;
             }
         }
         static void Main(string[] args)
