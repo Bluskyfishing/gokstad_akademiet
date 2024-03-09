@@ -12,12 +12,12 @@ namespace SudokuValidator
             public bool SubBoxChecker(char[][] board)
             {
                 List<char[]> tempList = new List<char[]>();
-                List<char[]> listbox = new List<char[]>();
+                List<char[]> listBox = new List<char[]>();
                 List<char> resultList = new List<char>();
 
-                for (int column = 0; column < 3; column++)
+                for (int column = 0; column < 3; column++) //Splits lists up in 3. 
                 {
-                    foreach (char[] row in board)
+                    foreach (char[] row in board) //checks each 3 squares going vertically.
                     {
                         if (column == 0)
                         {
@@ -37,28 +37,28 @@ namespace SudokuValidator
 
                     for (int i = 0; i < tempList.Count; i++)
                     {
-                        listbox.Add(tempList[i]);
+                        listBox.Add(tempList[i]);
 
-                        if (listbox.Count() == 3)
+                        if (listBox.Count() == 3) //Checks the "Square" when 3 lists has been added.
                         {
-                            foreach (char[] boxLine in listbox)
+                            foreach (char[] boxLine in listBox)
                             {
                                 foreach (char letter in boxLine)
                                 {
                                     if (letter == '.') continue;
-                                    resultList.Add(letter);
+                                    resultList.Add(letter); //list has only numbers. 
                                 }
                             }
 
-                            HashSet<char> resultSet = new HashSet<char>(resultList);
+                            HashSet<char> resultSet = new HashSet<char>(resultList); //Is shorter if duplicates exists.
 
-                            if (resultList.Count() != resultSet.Count())
+                            if (resultList.Count() != resultSet.Count()) //if duplicates returns false.
                             {
                                 Console.WriteLine($"Number in the same square!");
                                 return false;
                             }
 
-                            listbox.Clear();
+                            listBox.Clear();
                             resultList.Clear();
                         }
                     }
@@ -69,17 +69,17 @@ namespace SudokuValidator
             {
                 for (int i = 0; i < board.Length; i++)
                 {
-                    List<char> noDuplicates = new List<char>();
-                    List<char> noDuplicates2 = new List<char>();
+                    List<char> rows = new List<char>();
+                    List<char> columns = new List<char>();
 
                     for (int j = 0; j < board[i].Length; j++)
                     {
 
-                        if (!noDuplicates.Contains(board[i][j])) //Checks row if duplicate.
+                        if (!rows.Contains(board[i][j])) //Checks row if duplicate.
                         {
                             if (board[i][j] != '.')
                             {
-                                noDuplicates.Add(board[i][j]);
+                                rows.Add(board[i][j]);
                             } 
                         }
                         else
@@ -88,11 +88,11 @@ namespace SudokuValidator
                             return false;
                         }
 
-                        if (!noDuplicates2.Contains(board[j][i])) //Checks column if duplicate.
+                        if (!columns.Contains(board[j][i])) //Checks column if duplicate.
                         {
                             if (board[j][i] != '.')
                             {
-                                noDuplicates2.Add(board[j][i]);
+                                columns.Add(board[j][i]);
                             }
                         }
                         else
@@ -103,7 +103,7 @@ namespace SudokuValidator
                     }
                 }
 
-                if (!SubBoxChecker(board)) { return false; }
+                if (!SubBoxChecker(board)) { return false; } //Calls func to find if duplicates in 3x3 grid.
 
                 return true;
             }
