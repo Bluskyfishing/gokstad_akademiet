@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace SudokuValidator
 {
     internal class Program
@@ -111,7 +110,7 @@ namespace SudokuValidator
         static void Main(string[] args)
         {
             char[][] board = 
-                [['5', '3', '2', '.', '7', '.', '.', '.', '.'], //TRUE
+                [['5', '3', '.', '.', '7', '.', '.', '.', '.'], //TRUE
                 ['6', '.', '.', '1', '9', '5', '.', '.', '.'], 
                 ['.', '9', '8', '.', '.', '.', '.', '6', '.'], 
                 ['8', '.', '.', '.', '6', '.', '.', '.', '3'], 
