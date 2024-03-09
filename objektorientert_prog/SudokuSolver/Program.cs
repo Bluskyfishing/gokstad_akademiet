@@ -9,61 +9,60 @@ namespace SudokuValidator
     {
         public class Solution
         {
-            public bool SubBoxChecker(char[][] board, int side)
+            public bool SubBoxChecker(char[][] board)
             {
                 List<char[]> tempList = new List<char[]>();
                 List<char[]> listbox = new List<char[]>();
                 List<char> resultList = new List<char>();
 
-                foreach (char[] row in board)
+                for (int column = 0; column < 3; column++)
                 {
-                    if (side == 1)
+                    foreach (char[] row in board)
                     {
-                        tempList.Add(row.Take(3).ToArray());
-                    }
-                    else if (side == 2)
-                    {
-                        tempList.Add(row.Skip(3).Take(3).ToArray());
-
-                    }
-                    else if (side == 3)
-                    {
-                        tempList.Add(row.Skip(6).ToArray());
-                    }
-                    
-                }
-                foreach (char[] row in tempList) 
-                {
-                    Console.WriteLine(row);
-                }
-                Console.WriteLine("\n");
-                for (int i = 0; i < tempList.Count; i++)
-                {
-                    listbox.Add(tempList[i]);
-
-                    if (listbox.Count() == 3)
-                    {
-                        foreach(char[] boxLine in listbox)
+                        if (column == 0)
                         {
-                            foreach (char letter in boxLine)
+                            tempList.Add(row.Take(3).ToArray());
+                        }
+                        else if (column == 1)
+                        {
+                            tempList.Add(row.Skip(3).Take(3).ToArray());
+
+                        }
+                        else if (column == 2)
+                        {
+                            tempList.Add(row.Skip(6).ToArray());
+                        }
+
+                    }
+
+                    for (int i = 0; i < tempList.Count; i++)
+                    {
+                        listbox.Add(tempList[i]);
+
+                        if (listbox.Count() == 3)
+                        {
+                            foreach (char[] boxLine in listbox)
                             {
-                                if (letter == '.') continue;
-                                resultList.Add(letter);
+                                foreach (char letter in boxLine)
+                                {
+                                    if (letter == '.') continue;
+                                    resultList.Add(letter);
+                                }
                             }
-                        }
-                        HashSet<char> resultSet = new HashSet<char>(resultList);
 
-                        if (resultList.Count() != resultSet.Count())
-                        {
-                            Console.WriteLine("Theres a same number in square!");
-                            return false;
+                            HashSet<char> resultSet = new HashSet<char>(resultList);
+
+                            if (resultList.Count() != resultSet.Count())
+                            {
+                                Console.WriteLine($"Number in the same square!");
+                                return false;
+                            }
+
+                            listbox.Clear();
+                            resultList.Clear();
                         }
-                            
-                        listbox.Clear();
-                        resultList.Clear();
-                    } 
+                    }
                 }
-                
                 return true;
             }
             public bool IsValidSudoku(char[][] board)
@@ -85,6 +84,7 @@ namespace SudokuValidator
                         }
                         else
                         {
+                            Console.WriteLine("Number in row!");
                             return false;
                         }
 
@@ -97,14 +97,13 @@ namespace SudokuValidator
                         }
                         else
                         {
+                            Console.WriteLine("Number in column!");
                             return false;
                         }
                     }
                 }
 
-                if (!SubBoxChecker(board, 1)) { return false; }
-                if (!SubBoxChecker(board, 2)) { return false; }
-                if (!SubBoxChecker(board, 3)) { return false; }
+                if (!SubBoxChecker(board)) { return false; }
 
                 return true;
             }
@@ -112,7 +111,7 @@ namespace SudokuValidator
         static void Main(string[] args)
         {
             char[][] board = 
-                [['5', '3', '.', '.', '7', '.', '.', '.', '.'], //TRUE
+                [['5', '3', '2', '.', '7', '.', '.', '.', '.'], //TRUE
                 ['6', '.', '.', '1', '9', '5', '.', '.', '.'], 
                 ['.', '9', '8', '.', '.', '.', '.', '6', '.'], 
                 ['8', '.', '.', '.', '6', '.', '.', '.', '3'], 
@@ -124,7 +123,7 @@ namespace SudokuValidator
 
             char[][] board2 =
                 [['8', '3', '.', '.', '7', '.', '.', '.', '.'], //FALSE
-                ['6', '.', '.', '1', '9', '5', '.', '.', '.'],
+                ['6', '2', '.', '1', '9', '5', '.', '.', '.'],
                 ['.', '9', '8', '.', '.', '.', '.', '6', '.'],
                 ['8', '.', '.', '.', '6', '.', '.', '.', '3'],
                 ['4', '.', '.', '8', '.', '3', '.', '.', '1'],
@@ -134,8 +133,8 @@ namespace SudokuValidator
                 ['.', '.', '.', '.', '8', '.', '.', '7', '9']];
 
             char[][] board3 =
-                [['.', '3', '.', '.', '7', '.', '.', '.', '.'], //FALSE 1 added first square
-                ['6', '1', '.', '1', '9', '5', '.', '.', '.'],
+                [['.', '3', '.', '.', '7', '.', '.', '.', '.'], //FALSE 3 added first square
+                ['6', '.', '3', '1', '9', '5', '.', '.', '.'],
                 ['1', '9', '.', '.', '.', '.', '.', '6', '.'],
                 ['8', '.', '.', '.', '6', '.', '.', '.', '3'],
                 ['4', '.', '.', '8', '.', '3', '.', '.', '1'],
@@ -147,8 +146,8 @@ namespace SudokuValidator
             Solution  solution = new Solution();
 
             Console.WriteLine(solution.IsValidSudoku(board));
-            //Console.WriteLine(solution.IsValidSudoku(board2));
-            //Console.WriteLine(solution.IsValidSudoku(board3));
+            Console.WriteLine(solution.IsValidSudoku(board2));
+            Console.WriteLine(solution.IsValidSudoku(board3));
         }
     }
 }
