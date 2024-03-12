@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -6,7 +7,7 @@ namespace SudokuValidator
 {
     internal class Program
     {
-        public class Solution
+        public class Solution //Copy here for leetcode.
         {
             public bool SubBoxChecker(char[][] board)
             {
@@ -68,32 +69,29 @@ namespace SudokuValidator
             {
                 for (int i = 0; i < board.Length; i++)
                 {
-                    List<char> rows = new List<char>();
-                    List<char> columns = new List<char>();
+                    HashSet<char> rows = new HashSet<char>();
+                    HashSet<char> columns = new HashSet<char>();
 
-                    for (int j = 0; j < board[i].Length; j++)
+                    for (int j = 0; j < board[i].Length; j++) 
                     {
+                        if (board[i][j] == '.') { }
 
-                        if (!rows.Contains(board[i][j])) //Checks row if duplicate.
+                        else if (rows.Add(board[i][j])) //Checks row if duplicate.
                         {
-                            if (board[i][j] != '.')
-                            {
                                 rows.Add(board[i][j]);
-                            } 
-                        }
+                            }
                         else
                         {
                             Console.WriteLine("Number in row!");
                             return false;
-                        }
+                        }  
 
-                        if (!columns.Contains(board[j][i])) //Checks column if duplicate.
+                        if (board[j][i] == '.') { } 
+
+                        else if (columns.Add(board[j][i])) //Checks column if duplicate.
                         {
-                            if (board[j][i] != '.')
-                            {
                                 columns.Add(board[j][i]);
                             }
-                        }
                         else
                         {
                             Console.WriteLine("Number in column!");
@@ -101,7 +99,6 @@ namespace SudokuValidator
                         }
                     }
                 }
-
                 if (!SubBoxChecker(board)) { return false; } //Calls func to find if duplicates in 3x3 grid.
 
                 return true;
@@ -121,9 +118,9 @@ namespace SudokuValidator
                 ['.', '.', '.', '.', '8', '.', '.', '7', '9']];
 
             char[][] board2 =
-                [['8', '3', '.', '.', '7', '.', '.', '.', '.'], //FALSE
+               [['8', '3', '.', '.', '7', '.', '.', '.', '.'], //FALSE 2 "8" first column.
                 ['6', '2', '.', '1', '9', '5', '.', '.', '.'],
-                ['.', '9', '8', '.', '.', '.', '.', '6', '.'],
+                ['.', '9', '.', '.', '.', '.', '.', '6', '.'],
                 ['8', '.', '.', '.', '6', '.', '.', '.', '3'],
                 ['4', '.', '.', '8', '.', '3', '.', '.', '1'],
                 ['7', '.', '.', '.', '2', '.', '.', '.', '6'],
@@ -142,7 +139,7 @@ namespace SudokuValidator
                 ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
                 ['.', '.', '.', '.', '8', '.', '.', '7', '9']];
 
-            Solution  solution = new Solution();
+            Solution solution = new Solution();
 
             Console.WriteLine(solution.IsValidSudoku(board));
             Console.WriteLine(solution.IsValidSudoku(board2));
