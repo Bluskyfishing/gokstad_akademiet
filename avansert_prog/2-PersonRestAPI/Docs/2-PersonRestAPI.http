@@ -1,0 +1,10 @@
+@_2_PersonRestAPI_HostAddress = http://localhost:5127
+
+GET {{_2_PersonRestAPI_HostAddress}}/persons
+Accept: application/json
+
+###
+POST {{_2_PersonRestAPI_HostAddress}}/persons
+Accept: application/json
+contetn-Type: application/json
+###
