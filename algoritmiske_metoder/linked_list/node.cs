@@ -29,6 +29,12 @@ namespace recursiveList
 
         public void addMethod(string input)
         {
+            if (findMethod(this.head, input) !=  null) 
+            {
+                Console.WriteLine("Cannot add duplicate element!");
+                return;    
+            }
+
             if (this.head == null)
             {
                 this.head = new Node(input);
@@ -45,25 +51,35 @@ namespace recursiveList
             if (node.next == null) { return node; }
 
             Node tail = addRecursive(node.next);
+
             return tail;
         }
-        public bool findMethod(Node node, string input)
+        public Node findMethod(Node node, string input)
         {
-            if (node.item_value == input) { return true; }
-            if (node.next == null) { return false; }
+            if (node == null) { return null; }
+            if (node.item_value == input) { return node; }
 
-            bool found = findMethod(node.next, input);
+            Node found = findMethod(node.next, input);
 
             return found;
-
-
         }
 
-        public bool removeMethod(string input)
+        public Node removeMethod(Node node,  string input)
         {
+            if (node == null) { return node; }
 
-            removeMethod(input);
-            return false;
+            if (node.item_value == input) 
+            {
+                if (node == this.head)
+                {
+                    return this.head = node.next;
+                }
+                return node.next;
+            }
+
+            node.next = removeMethod(node.next, input);
+
+            return node;
         }
 
         public void nodeListPrint(Node node)
