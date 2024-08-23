@@ -47,19 +47,22 @@ namespace recursiveList
             Node tail = addRecursive(node.next);
             return tail;
         }
+        public bool findMethod(Node node, string input)
+        {
+            if (node.item_value == input) { return true; }
+            if (node.next == null) { return false; }
+
+            bool found = findMethod(node.next, input);
+
+            return found;
+
+
+        }
 
         public bool removeMethod(string input)
         {
 
             removeMethod(input);
-            return false;
-        }
-
-        public bool findMethod(string input)
-        {
-
-            //findMethod();
-
             return false;
         }
 
