@@ -61,5 +61,15 @@ class Program
         
         Console.WriteLine("\nDepth First Search:");
         Console.WriteLine(Node<int>.DFS(n107, 72));
+
+        // expected output 
+        // 107
+        // 42
+        // 16
+        // 8
+        // 4
+        // 15
+        // 23
+        // 72
     }
 }
