@@ -1,10 +1,18 @@
-@_2_PersonRestAPI_HostAddress = http://localhost:5127
+@PersonRestAPI_HostAddress = https://localhost:7078
 
-GET {{_2_PersonRestAPI_HostAddress}}/persons
+GET {{PersonRestAPI_HostAddress}}/persons
 Accept: application/json
 
 ###
-POST {{_2_PersonRestAPI_HostAddress}}/persons
+POST {{PersonRestAPI_HostAddress}}/persons
 Accept: application/json
-contetn-Type: application/json
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "Ola",
+  "lastName": "Normann",
+  "age": 30
+}
 ###
+DELETE {{PersonRestAPI_HostAddress}}/persons/1

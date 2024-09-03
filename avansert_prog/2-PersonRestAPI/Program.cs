@@ -1,11 +1,13 @@
-using _2_PersonRestAPI.Models;
-using System.Net.Cache;
+using PersonRestAPI.Endpoints;
+using PersonRestAPI.Repositories;
+using PersonRestAPI.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// vi legger inn i container er: Klasse som implementerer IPersonRepository
+builder.Services.AddSingleton<IPersonRepository, PersonInMemoryDataStorage>();
 
-builder.Services.AddControllers();
+// Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -21,25 +23,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
-// making endpoint. Method: GET. ON: https://localhost:7251/persons
-app.MapGet("/persons", () => 
-{
-    var person = new Person { Age = 20, id = 1, FirstName = "Ola", LastName = "Normann" };
-    return Results.Ok(person);
-}).WithName("Persons");
-
-app.MapPost("/persons", (Person person) =>
-{
-    return Results.Ok(new Person()
-    {
-        Age = person.Age + 1,
-        FirstName = person.FirstName,
-        LastName = person.LastName,
-        id = person.id
-
-    });
-}).WithName("addPersons");
+// Lager vårt første endepunkt! Metode: GET, https://localhost:7078/persons/
+app.MapPersonEndpoints();
 
 app.Run();
+
