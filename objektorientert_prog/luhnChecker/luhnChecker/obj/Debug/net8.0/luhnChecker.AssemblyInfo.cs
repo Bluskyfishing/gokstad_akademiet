@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("luhnChecker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db07387ecfac060b9fc49305e292e005e76144db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5966c60e90e247dd5b08d1e23e1f884879e65fc8")]
 [assembly: System.Reflection.AssemblyProductAttribute("luhnChecker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("luhnChecker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

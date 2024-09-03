@@ -1,6 +1,0 @@
-@_1_hello_RestApi_HostAddress = http://localhost:5193
-
-GET {{_1_hello_RestApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
